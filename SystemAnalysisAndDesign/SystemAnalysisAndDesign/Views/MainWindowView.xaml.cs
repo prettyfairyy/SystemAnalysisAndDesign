@@ -14,9 +14,9 @@ namespace SystemAnalysisAndDesign.Views
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindowViews : Window
+    public partial class MainWindowView : Window
     {
-        public MainWindowViews()
+        public MainWindowView()
         {
             InitializeComponent();
         }
