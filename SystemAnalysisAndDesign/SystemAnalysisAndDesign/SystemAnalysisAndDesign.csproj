@@ -9,9 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="Image\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Views\MainWindowView\ComponentMainWindowView\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.3" />
   </ItemGroup>
 
 </Project>
