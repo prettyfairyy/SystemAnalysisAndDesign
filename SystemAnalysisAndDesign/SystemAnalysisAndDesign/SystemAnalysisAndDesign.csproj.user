@@ -7,7 +7,27 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\DetailCarRentView\DetailCarRentMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Share\Footer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Share\Header.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\DetailCarRentView\DetailCarRentMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\MainWindowView\MainWindowMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Share\Footer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Share\Header.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
