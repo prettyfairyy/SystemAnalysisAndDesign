@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="SystemAnalysisAndDesign.Views.Share.Header"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:SystemAnalysisAndDesign.Views.Share"
+             mc:Ignorable="d" 
+             d:DesignHeight="62.8766197183098" d:DesignWidth="1280" Background="white">
+    <Grid>
+        <Grid VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="300"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Logo -->
+            <TextBlock Text="MORENT"
+                   FontWeight="Bold"
+                   FontSize="24"
+                   Foreground="#3A63F1"
+                   VerticalAlignment="Center"
+                   Margin="20,0"/>
+
+            <!-- Search Box -->
+            <Border Grid.Column="1" CornerRadius="20" BorderBrush="#E0E0E0" BorderThickness="1" Margin="10" Padding="10" Width="600" VerticalAlignment="Center">
+                <DockPanel>
+                    <materialDesign:PackIcon Kind="Magnify" Width="20" Height="20" Margin="0,0,5,0" VerticalAlignment="Center" Foreground="Gray"/>
+                    <TextBox Width="400" FontSize="14" VerticalAlignment="Center" 
+                         BorderThickness="0" Background="Transparent" 
+                         Foreground="Gray" Text="Search something here"/>
+                    <materialDesign:PackIcon Kind="Tune" Width="20" Height="20" Margin="0,0,5,0" VerticalAlignment="Center" HorizontalAlignment="right" Foreground="Gray"/>
+                </DockPanel>
+            </Border>
+
+            <!-- Icons (Heart, Bell, Gear, Avatar) -->
+            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,20,0">
+                <!-- Favorite -->
+                <Border Width="40" Height="40" Background="White" CornerRadius="20" Margin="5,0,0,0"
+        BorderBrush="#E0E0E0" BorderThickness="1" Padding="6">
+                    <materialDesign:PackIcon Kind="Heart" Width="28" Height="28" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <!-- Notification -->
+                <Border Width="40" Height="40" Background="White" CornerRadius="20" Margin="5,0,0,0"
+        BorderBrush="#E0E0E0" BorderThickness="1" Padding="6">
+                    <Grid>
+                        <materialDesign:PackIcon Kind="Bell" Width="28" Height="28" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Ellipse Width="8" Height="8" Fill="Red" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,4,4,0"/>
+                    </Grid>
+                </Border>
+
+                <!-- Settings -->
+                <Border Width="40" Height="40" Background="White" CornerRadius="20" Margin="5,0,0,0"
+        BorderBrush="#E0E0E0" BorderThickness="1" Padding="6">
+                    <materialDesign:PackIcon Kind="Cog" Width="28" Height="28" Foreground="Gray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Border>
+
+                <!-- User Avatar -->
+                <Ellipse Width="40" Height="40" Margin="5,0,0,0">
+                    <!--<Ellipse.Fill>
+                        <ImageBrush ImageSource="/Image/avatar.jpg"/>
+                    </Ellipse.Fill>-->
+                </Ellipse>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,99 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\HK6\\Ph\u00E2n t\u00EDch thi\u1EBFt k\u1EBF h\u1EC7 th\u1ED1ng\\Project\\SystemAnalysisAndDesign\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{53B0E729-D108-447B-8562-9C756A9882BD}|SystemAnalysisAndDesign\\SystemAnalysisAndDesign.csproj|d:\\hk6\\ph\u00E2n t\u00EDch thi\u1EBFt k\u1EBF h\u1EC7 th\u1ED1ng\\project\\systemanalysisanddesign\\systemanalysisanddesign\\views\\detailcarrentview\\detailcarrentmainview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{53B0E729-D108-447B-8562-9C756A9882BD}|SystemAnalysisAndDesign\\SystemAnalysisAndDesign.csproj|solutionrelative:systemanalysisanddesign\\views\\detailcarrentview\\detailcarrentmainview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53B0E729-D108-447B-8562-9C756A9882BD}|SystemAnalysisAndDesign\\SystemAnalysisAndDesign.csproj|d:\\hk6\\ph\u00E2n t\u00EDch thi\u1EBFt k\u1EBF h\u1EC7 th\u1ED1ng\\project\\systemanalysisanddesign\\systemanalysisanddesign\\views\\share\\footer.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{53B0E729-D108-447B-8562-9C756A9882BD}|SystemAnalysisAndDesign\\SystemAnalysisAndDesign.csproj|solutionrelative:systemanalysisanddesign\\views\\share\\footer.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53B0E729-D108-447B-8562-9C756A9882BD}|SystemAnalysisAndDesign\\SystemAnalysisAndDesign.csproj|d:\\hk6\\ph\u00E2n t\u00EDch thi\u1EBFt k\u1EBF h\u1EC7 th\u1ED1ng\\project\\systemanalysisanddesign\\systemanalysisanddesign\\views\\share\\header.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{53B0E729-D108-447B-8562-9C756A9882BD}|SystemAnalysisAndDesign\\SystemAnalysisAndDesign.csproj|solutionrelative:systemanalysisanddesign\\views\\share\\header.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53B0E729-D108-447B-8562-9C756A9882BD}|SystemAnalysisAndDesign\\SystemAnalysisAndDesign.csproj|d:\\hk6\\ph\u00E2n t\u00EDch thi\u1EBFt k\u1EBF h\u1EC7 th\u1ED1ng\\project\\systemanalysisanddesign\\systemanalysisanddesign\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{53B0E729-D108-447B-8562-9C756A9882BD}|SystemAnalysisAndDesign\\SystemAnalysisAndDesign.csproj|solutionrelative:systemanalysisanddesign\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53B0E729-D108-447B-8562-9C756A9882BD}|SystemAnalysisAndDesign\\SystemAnalysisAndDesign.csproj|d:\\hk6\\ph\u00E2n t\u00EDch thi\u1EBFt k\u1EBF h\u1EC7 th\u1ED1ng\\project\\systemanalysisanddesign\\systemanalysisanddesign\\views\\mainwindowview\\mainwindowmainview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{53B0E729-D108-447B-8562-9C756A9882BD}|SystemAnalysisAndDesign\\SystemAnalysisAndDesign.csproj|solutionrelative:systemanalysisanddesign\\views\\mainwindowview\\mainwindowmainview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Header.xaml",
+              "DocumentMoniker": "D:\\HK6\\Ph\u00E2n t\u00EDch thi\u1EBFt k\u1EBF h\u1EC7 th\u1ED1ng\\Project\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\Views\\Share\\Header.xaml",
+              "RelativeDocumentMoniker": "SystemAnalysisAndDesign\\Views\\Share\\Header.xaml",
+              "ToolTip": "D:\\HK6\\Ph\u00E2n t\u00EDch thi\u1EBFt k\u1EBF h\u1EC7 th\u1ED1ng\\Project\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\Views\\Share\\Header.xaml",
+              "RelativeToolTip": "SystemAnalysisAndDesign\\Views\\Share\\Header.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-01T06:22:03.15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindowMainView.xaml",
+              "DocumentMoniker": "D:\\HK6\\Ph\u00E2n t\u00EDch thi\u1EBFt k\u1EBF h\u1EC7 th\u1ED1ng\\Project\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\Views\\MainWindowView\\MainWindowMainView.xaml",
+              "RelativeDocumentMoniker": "SystemAnalysisAndDesign\\Views\\MainWindowView\\MainWindowMainView.xaml",
+              "ToolTip": "D:\\HK6\\Ph\u00E2n t\u00EDch thi\u1EBFt k\u1EBF h\u1EC7 th\u1ED1ng\\Project\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\Views\\MainWindowView\\MainWindowMainView.xaml",
+              "RelativeToolTip": "SystemAnalysisAndDesign\\Views\\MainWindowView\\MainWindowMainView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-01T05:49:48.092Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DetailCarRentMainView.xaml",
+              "DocumentMoniker": "D:\\HK6\\Ph\u00E2n t\u00EDch thi\u1EBFt k\u1EBF h\u1EC7 th\u1ED1ng\\Project\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\Views\\DetailCarRentView\\DetailCarRentMainView.xaml",
+              "RelativeDocumentMoniker": "SystemAnalysisAndDesign\\Views\\DetailCarRentView\\DetailCarRentMainView.xaml",
+              "ToolTip": "D:\\HK6\\Ph\u00E2n t\u00EDch thi\u1EBFt k\u1EBF h\u1EC7 th\u1ED1ng\\Project\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\Views\\DetailCarRentView\\DetailCarRentMainView.xaml",
+              "RelativeToolTip": "SystemAnalysisAndDesign\\Views\\DetailCarRentView\\DetailCarRentMainView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-01T05:26:53.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "App.xaml",
+              "DocumentMoniker": "D:\\HK6\\Ph\u00E2n t\u00EDch thi\u1EBFt k\u1EBF h\u1EC7 th\u1ED1ng\\Project\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\App.xaml",
+              "RelativeDocumentMoniker": "SystemAnalysisAndDesign\\App.xaml",
+              "ToolTip": "D:\\HK6\\Ph\u00E2n t\u00EDch thi\u1EBFt k\u1EBF h\u1EC7 th\u1ED1ng\\Project\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\App.xaml",
+              "RelativeToolTip": "SystemAnalysisAndDesign\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-01T06:28:06.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Footer.xaml",
+              "DocumentMoniker": "D:\\HK6\\Ph\u00E2n t\u00EDch thi\u1EBFt k\u1EBF h\u1EC7 th\u1ED1ng\\Project\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\Views\\Share\\Footer.xaml",
+              "RelativeDocumentMoniker": "SystemAnalysisAndDesign\\Views\\Share\\Footer.xaml",
+              "ToolTip": "D:\\HK6\\Ph\u00E2n t\u00EDch thi\u1EBFt k\u1EBF h\u1EC7 th\u1ED1ng\\Project\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\Views\\Share\\Footer.xaml",
+              "RelativeToolTip": "SystemAnalysisAndDesign\\Views\\Share\\Footer.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-01T07:06:29.527Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
