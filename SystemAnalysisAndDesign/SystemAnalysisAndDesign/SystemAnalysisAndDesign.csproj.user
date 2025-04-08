@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\CategoryCarRentView\CategoryCarRentView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\DetailCarRentView\DetailCarRentMainView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
