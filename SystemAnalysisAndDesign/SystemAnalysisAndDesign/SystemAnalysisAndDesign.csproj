@@ -9,7 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Image\" />
+    <Compile Remove="Image\**" />
+    <EmbeddedResource Remove="Image\**" />
+    <None Remove="Image\**" />
+    <Page Remove="Image\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ViewModels\" />
     <Folder Include="Views\DetailCarRentView\ComponentDetailCarRentView\" />
     <Folder Include="Views\MainWindowView\ComponentMainWindowView\" />
