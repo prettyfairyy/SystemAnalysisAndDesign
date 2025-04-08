@@ -5,6 +5,14 @@
              StartupUri="Views/DetailCarRentView/DetailCarRentMainView.xaml">
     <Application.Resources>
         <ResourceDictionary>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="FontFamily" Value="Montserrat"/> <!-- Đặt font mặc định -->
+                <Setter Property="FontSize" Value="14"/> <!-- Đặt kích thước font -->
+            </Style>
+            <Style TargetType="{x:Type Control}">
+                <Setter Property="FontFamily" Value="Montserrat"/>
+                <Setter Property="FontSize" Value="16"/>
+            </Style>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
                 <!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />-->
