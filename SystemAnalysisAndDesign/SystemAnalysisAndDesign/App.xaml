@@ -7,7 +7,7 @@
         <ResourceDictionary>
             <Style TargetType="{x:Type TextBlock}">
                 <Setter Property="FontFamily" Value="Montserrat"/> <!-- Đặt font mặc định -->
-                <Setter Property="FontSize" Value="14"/> <!-- Đặt kích thước font -->
+                <Setter Property="FontSize" Value="13"/> <!-- Đặt kích thước font -->
             </Style>
             <Style TargetType="{x:Type Control}">
                 <Setter Property="FontFamily" Value="Montserrat"/>
