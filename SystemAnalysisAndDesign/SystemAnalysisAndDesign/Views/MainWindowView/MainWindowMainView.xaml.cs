@@ -10,14 +10,14 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SystemAnalysisAndDesign.Models;
 
-namespace SystemAnalysisAndDesign.Views
+namespace SystemAnalysisAndDesign.Views.MainWindowView
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindowView : Window
+    public partial class MainWindowMainView : Window
     {
-        public MainWindowView()
+        public MainWindowMainView()
         {
             InitializeComponent();
             var context = new RentalDbContext(); // sẽ trigger EnsureCreated

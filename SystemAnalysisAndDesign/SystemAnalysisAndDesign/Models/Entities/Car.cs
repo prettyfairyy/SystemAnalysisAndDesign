@@ -8,7 +8,7 @@ namespace SystemAnalysisAndDesign.Models.Entities
 {
     public class Car
     {
-        public int CarId { get; set; }
+        public string CarId { get; set; }
         public string LicensePlate { get; set; }
         public string? Brand { get; set; }
         public string? Model { get; set; }
@@ -20,7 +20,7 @@ namespace SystemAnalysisAndDesign.Models.Entities
         public int? Capacity { get; set; }
         public string? Color { get; set; }
         public string? Description { get; set; }
-
+        public string? ImagePath { get; set; }
         public ICollection<Rental> Rentals { get; set; }
     }
 }

@@ -10,24 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SystemAnalysisAndDesign.Views.Share
+namespace SystemAnalysisAndDesign.Views.CategoryCarRentView
 {
     /// <summary>
-    /// Interaction logic for Header.xaml
+    /// Interaction logic for CategoryCarRentMainView.xaml
     /// </summary>
-    public partial class Header : UserControl
+    public partial class CategoryCarRentMainView : Window
     {
-        public Header()
+        public CategoryCarRentMainView()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }
