@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace SystemAnalysisAndDesign.Views.Share
 {
     /// <summary>
-    /// Interaction logic for Header.xaml
+    /// Interaction logic for UserControl1.xaml
     /// </summary>
-    public partial class Header : UserControl
+    public partial class UserControl1 : UserControl
     {
-        public Header()
+        public UserControl1()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }
