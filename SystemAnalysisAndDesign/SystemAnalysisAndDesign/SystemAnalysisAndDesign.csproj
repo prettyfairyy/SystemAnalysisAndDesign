@@ -9,7 +9,42 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
+    <None Remove="Image\CarImage\Audi-Q8.png" />
+    <None Remove="Image\CarImage\BMW-X5.png" />
+    <None Remove="Image\CarImage\Chevrolet-Cruze.png" />
+    <None Remove="Image\CarImage\Chevrolet-Malibu.png" />
+    <None Remove="Image\CarImage\Chevrolet-Traverse.png" />
+    <None Remove="Image\CarImage\Ford-Raptor.png" />
+    <None Remove="Image\CarImage\Honda-Civic.png" />
+    <None Remove="Image\CarImage\Honda-CRV.png" />
+    <None Remove="Image\CarImage\Infiniti-QX80.png" />
+    <None Remove="Image\CarImage\Kia-Sedona.png" />
+    <None Remove="Image\CarImage\Koenigsegg-AgeraRS.png" />
+    <None Remove="Image\CarImage\Mazda-CX5.png" />
+    <None Remove="Image\CarImage\Mazda-Mazda3.png" />
+    <None Remove="Image\CarImage\Mazda-MX5.png" />
+    <None Remove="Image\CarImage\Mercedes-Benz-C300.png" />
+    <None Remove="Image\CarImage\Mercedes-Benz-GLC.png" />
+    <None Remove="Image\CarImage\Mitsubishi-Outlander.png" />
+    <None Remove="Image\CarImage\Mitsubishi-Xpander.png" />
+    <None Remove="Image\CarImage\Nissan-Rogue.png" />
+    <None Remove="Image\CarImage\Peugeot-3008.png" />
+    <None Remove="Image\CarImage\Peugeot-508.png" />
+    <None Remove="Image\CarImage\Porsche-Cayenne.png" />
+    <None Remove="Image\CarImage\Porsche-Panamera.png" />
+    <None Remove="Image\CarImage\Porsche-Taycan.png" />
+    <None Remove="Image\CarImage\RangeRover-Evoque.png" />
+    <None Remove="Image\CarImage\RangeRover-SportDynamicSE.png" />
+    <None Remove="Image\CarImage\RollsRoyce-Phantom.png" />
+    <None Remove="Image\CarImage\Toyota-Camry.png" />
+    <None Remove="Image\CarImage\Toyota-Innova.png" />
+    <None Remove="Image\CarImage\Toyota-Yaris.png" />
+    <None Remove="Image\CarImage\VinFast-VF8.png" />
+    <None Remove="Image\CarImage\VinFast-VFe34.png" />
+    <None Remove="Image\CarImage\Volvo-S90.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Views\AdminCarRentView\ComponentAdminCarRentView\" />
     <Folder Include="Views\DetailCarRentView\ComponentDetailCarRentView\" />
     <Folder Include="Views\MainWindowView\ComponentMainWindowView\" />
@@ -23,6 +58,108 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Image\CarImage\Audi-Q8.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\BMW-X5.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Chevrolet-Cruze.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Chevrolet-Malibu.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Chevrolet-Traverse.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Ford-Raptor.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Honda-Civic.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Honda-CRV.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Infiniti-QX80.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Kia-Sedona.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Koenigsegg-AgeraRS.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Mazda-CX5.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Mazda-Mazda3.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Mazda-MX5.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Mercedes-Benz-C300.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Mercedes-Benz-GLC.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Mitsubishi-Outlander.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Mitsubishi-Xpander.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Nissan-Rogue.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Peugeot-3008.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Peugeot-508.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Porsche-Cayenne.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Porsche-Panamera.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Porsche-Taycan.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\RangeRover-Evoque.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\RangeRover-SportDynamicSE.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\RollsRoyce-Phantom.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Toyota-Camry.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Toyota-Innova.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Toyota-Yaris.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\VinFast-VF8.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\VinFast-VFe34.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\CarImage\Volvo-S90.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

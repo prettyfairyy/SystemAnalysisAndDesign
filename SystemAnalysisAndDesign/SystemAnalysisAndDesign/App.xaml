@@ -2,9 +2,39 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:SystemAnalysisAndDesign"
-             StartupUri="Views/AdminDashboardView/AdminDashboardMainView.xaml">
+             StartupUri="Views/CategoryCarRentView/CategoryCarRentMainView.xaml">
     <Application.Resources>
         <ResourceDictionary>
+            <Style x:Key="PrimaryButtonStyle" TargetType="Button">
+                <Setter Property="Background" Value="#3A63F1"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="FontSize" Value="13"/>
+                <Setter Property="Padding" Value="12,6"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                            CornerRadius="8"
+                            SnapsToDevicePixels="True">
+                                <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          Margin="{TemplateBinding Padding}"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+
+                <!-- Hover effect -->
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#2C4FD8"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
             <Style TargetType="{x:Type TextBlock}">
                 <Setter Property="FontFamily" Value="Montserrat"/>
                 <!-- Đặt font mặc định -->
