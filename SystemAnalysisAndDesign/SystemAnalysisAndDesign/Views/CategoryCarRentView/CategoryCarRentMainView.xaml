@@ -4,7 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SystemAnalysisAndDesign.Views.CategoryCarRentView"
-        xmlns:components="clr-namespace:SystemAnalysisAndDesign.Views.Share"
+        xmlns:shared="clr-namespace:SystemAnalysisAndDesign.Views.Share"
+        xmlns:filteroption="clr-namespace:SystemAnalysisAndDesign.Views.CategoryCarRentView.ComponentCategoryCarRentView"
         mc:Ignorable="d"
         Title="CategoryCarRentMainView" Height="auto" Width="1280" Background="#EFF3FD">
     <Grid>
@@ -15,7 +16,7 @@
 
         <!--Header-->
         <Grid Grid.Row="0">
-            <components:Header/>
+            <shared:Header/>
         </Grid>
 
         <!--Main-->
@@ -28,173 +29,151 @@
                     </Grid.ColumnDefinitions>
 
                     <!-- Sidebar Filters -->
-                    <StackPanel Grid.Column="0" Background="White" Margin="0 0 20 0">
-                        <TextBlock Text="TYPE" FontWeight="Bold" Margin="20 20 0 10"/>
-                        <CheckBox Content="Sport (10)" IsChecked="True" Margin="20 0"/>
-                        <CheckBox Content="SUV (12)" IsChecked="True" Margin="20 0"/>
-                        <CheckBox Content="MPV (16)" Margin="20 0"/>
-                        <CheckBox Content="Sedan (20)" Margin="20 0"/>
-                        <CheckBox Content="Coupe (14)" Margin="20 0"/>
-                        <CheckBox Content="Hatchback (14)" Margin="20 0"/>
-
-                        <TextBlock Text="CAPACITY" FontWeight="Bold" Margin="20 20 0 10"/>
-                        <CheckBox Content="2 Person (10)" IsChecked="True" Margin="20 0"/>
-                        <CheckBox Content="4 Person (14)" Margin="20 0"/>
-                        <CheckBox Content="6 Person (12)" Margin="20 0"/>
-                        <CheckBox Content="8 or More (16)" Margin="20 0"/>
-
-                        <TextBlock Text="PRICE" FontWeight="Bold" Margin="20 20 0 10"/>
-                        <Slider Minimum="0" Maximum="100" Value="80" Margin="20 0 20 0"/>
-                        <TextBlock Text="Max. $100.00" Margin="20 5"/>
-                    </StackPanel>
+                    <filteroption:FilterOptionView Grid.Column="0"/>
 
                     <!-- Main Content -->
                     <StackPanel Grid.Column="1" Margin="0 10 20 10">
                         <Border Background="White" CornerRadius="10" Padding="10">
-                            <StackPanel Background="White" Margin="0 0 20 0" Width="1059">
+                            <StackPanel Background="White" Margin="0 0 0 0">
                                 <!-- Pick-Up & Drop-Off Section -->
-                                <Grid Margin="0 0 0 20">
+                                <Grid HorizontalAlignment="Center" Margin="0 20" Width="980">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
 
-                                    <!-- Pick-Up -->
-                                    <StackPanel Grid.Column="0" Margin="5">
-                                        <TextBlock Text="Pick - Up" FontWeight="Bold" FontSize="14" Margin="0 0 0 5"/>
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="*" />
-                                                <ColumnDefinition Width="*" />
-                                                <ColumnDefinition Width="*" />
-                                            </Grid.ColumnDefinitions>
-                                            <ComboBox Margin="0 5" Width="150">
-                                                <ComboBoxItem IsSelected="True" IsEnabled="False">Select your city</ComboBoxItem>
-                                                <ComboBoxItem>New York</ComboBoxItem>
-                                                <ComboBoxItem>Los Angeles</ComboBoxItem>
-                                            </ComboBox>
-                                            <DatePicker Grid.Column="1" Margin="5" Width="150"/>
-                                            <ComboBox Grid.Column="2" Margin="5" Width="150">
-                                                <ComboBoxItem IsSelected="True" IsEnabled="False">Select your time</ComboBoxItem>
-                                                <ComboBoxItem>08:00</ComboBoxItem>
-                                                <ComboBoxItem>12:00</ComboBoxItem>
-                                                <ComboBoxItem>16:00</ComboBoxItem>
-                                            </ComboBox>
-                                        </Grid>
-                                    </StackPanel>
+                                    <!-- Pick-Up Card -->
+                                    <Border Grid.Column="0" CornerRadius="15" Background="White" Padding="15" Margin="0 0 20 0">
+                                        <StackPanel>
+                                            <!-- Header -->
+                                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0 0 0 10">
+                                                <Ellipse Width="10" Height="10" Fill="#3A63F1" VerticalAlignment="Center"/>
+                                                <TextBlock Text="Pick - Up" FontWeight="Bold" FontSize="14" Margin="8 0"/>
+                                            </StackPanel>
 
-                                    <!-- Swap Button -->
-                                    <Button Grid.Column="1" Content="⇄" FontSize="16" Width="30" Height="30" Margin="10" VerticalAlignment="Center" />
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
 
-                                    <!-- Drop-Off -->
-                                    <StackPanel Grid.Column="2" Margin="10">
-                                        <TextBlock Text="Drop - Off" FontWeight="Bold" FontSize="14" Margin="0 0 0 5"/>
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="*" />
-                                                <ColumnDefinition Width="*" />
-                                                <ColumnDefinition Width="*" />
-                                            </Grid.ColumnDefinitions>
-                                            <ComboBox Grid.Column="0" Margin="0 5" Width="150">
-                                                <ComboBoxItem IsSelected="True" IsEnabled="False">Select your city</ComboBoxItem>
-                                                <!-- Các lựa chọn thật -->
-                                                <ComboBoxItem>New York</ComboBoxItem>
-                                                <ComboBoxItem>Los Angeles</ComboBoxItem>
-                                            </ComboBox>
-                                            <DatePicker Grid.Column="1" Margin="5" Width="150"/>
-                                            <ComboBox Grid.Column="2" Margin="5">
-                                                <ComboBoxItem IsSelected="True" IsEnabled="False">Select your time</ComboBoxItem>
-                                                <ComboBoxItem>08:00</ComboBoxItem>
-                                                <ComboBoxItem>12:00</ComboBoxItem>
-                                                <ComboBoxItem>16:00</ComboBoxItem>
-                                            </ComboBox>
-                                        </Grid>
-                                    </StackPanel>
+                                                <!-- Branch -->
+                                                <StackPanel Grid.Column="0" Margin="5">
+                                                    <TextBlock Text="Branch" FontWeight="Bold" FontSize="13" Margin="0 0 5 5"/>
+                                                    <ComboBox Background="#F4F4F4" Padding="8,4" BorderThickness="0"
+                              FontSize="12" Foreground="Gray">
+                                                        <ComboBoxItem Content="Select branch" IsSelected="True" IsEnabled="False"/>
+                                                        <ComboBoxItem Content="Tan Son Nhat Airport"/>
+                                                        <ComboBoxItem Content="City Center"/>
+                                                        <ComboBoxItem Content="Branch District 1"/>
+                                                        <ComboBoxItem Content="Branch District 2"/>
+                                                        <ComboBoxItem Content="Branch District 3"/>
+                                                        <ComboBoxItem Content="Branch District 5"/>
+                                                        <ComboBoxItem Content="Branch District 7"/>
+                                                    </ComboBox>
+                                                </StackPanel>
+
+                                                <!-- Date -->
+                                                <StackPanel Grid.Column="1" Margin="5">
+                                                    <TextBlock Text="Date" FontWeight="Bold" FontSize="13" Margin="0 0 5 5"/>
+                                                    <DatePicker Background="#F4F4F4" Padding="8,2" BorderThickness="0"
+                                FontSize="12" Foreground="Gray"/>
+                                                </StackPanel>
+
+                                                <!-- Time -->
+                                                <StackPanel Grid.Column="2" Margin="5">
+                                                    <TextBlock Text="Time" FontWeight="Bold" FontSize="13" Margin="0 0 5 5"/>
+                                                    <TextBox Background="#F4F4F4" BorderThickness="0" FontSize="13"
+                             Padding="8,4" Foreground="Gray" Text="08:00"
+                             Name="PickUpTimeTextBox"
+                             ToolTip="Enter time (hh:mm)"/>
+                                                </StackPanel>
+                                            </Grid>
+                                        </StackPanel>
+                                    </Border>
+
+                                    <!-- Switch Button -->
+                                    <Button Grid.Column="1" Content="⇅" Width="40" Height="40" FontSize="16"
+            Background="#3A63F1" Foreground="White" Margin="0"
+            BorderThickness="0" Cursor="Hand" HorizontalAlignment="Center"
+            VerticalAlignment="Center" Padding="0">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="{TemplateBinding Background}"
+                        CornerRadius="12">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+
+                                    <!-- Drop-Off Card -->
+                                    <Border Grid.Column="2" CornerRadius="15" Background="White" Padding="15" Margin="20 0 0 0">
+                                        <StackPanel>
+                                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0 0 0 10">
+                                                <Ellipse Width="10" Height="10" Fill="#3A63F1" VerticalAlignment="Center"/>
+                                                <TextBlock Text="Drop - Off" FontWeight="Bold" FontSize="14" Margin="8 0"/>
+                                            </StackPanel>
+
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <!-- Branch -->
+                                                <StackPanel Grid.Column="0" Margin="5">
+                                                    <TextBlock Text="Branch" FontWeight="Bold" FontSize="13" Margin="0 0 5 5"/>
+                                                    <ComboBox Background="#F4F4F4" Padding="8,4" BorderThickness="0"
+                              FontSize="12" Foreground="Gray">
+                                                        <ComboBoxItem Content="Select branch" IsSelected="True" IsEnabled="False"/>
+                                                        <ComboBoxItem Content="Tan Son Nhat Airport"/>
+                                                        <ComboBoxItem Content="City Center"/>
+                                                        <ComboBoxItem Content="Branch District 1"/>
+                                                        <ComboBoxItem Content="Branch District 2"/>
+                                                        <ComboBoxItem Content="Branch District 3"/>
+                                                        <ComboBoxItem Content="Branch District 5"/>
+                                                        <ComboBoxItem Content="Branch District 7"/>
+                                                    </ComboBox>
+                                                </StackPanel>
+
+                                                <!-- Date -->
+                                                <StackPanel Grid.Column="1" Margin="5">
+                                                    <TextBlock Text="Date" FontWeight="Bold" FontSize="13" Margin="0 0 5 5"/>
+                                                    <DatePicker Background="#F4F4F4" Padding="8,2" BorderThickness="0"
+                                FontSize="12" Foreground="Gray"/>
+                                                </StackPanel>
+
+                                                <!-- Time -->
+                                                <StackPanel Grid.Column="2" Margin="5">
+                                                    <TextBlock Text="Time" FontWeight="Bold" FontSize="13" Margin="0 0 5 5"/>
+                                                    <TextBox Background="#F4F4F4" BorderThickness="0" FontSize="13"
+                             Padding="8,4" Foreground="Gray" Text="12:00"
+                             Name="DropOffTimeTextBox"
+                             ToolTip="Enter time (hh:mm)"/>
+                                                </StackPanel>
+                                            </Grid>
+                                        </StackPanel>
+                                    </Border>
                                 </Grid>
 
+
                                 <!-- Car Card List -->
-                                <WrapPanel Margin="0" ItemHeight="Auto" Orientation="Horizontal">
-                                    <!-- Card 1 -->
-                                    <Border BorderBrush="#DDD" BorderThickness="1" CornerRadius="20" Width="250" Padding="10" Margin="10" Background="White">
-                                        <StackPanel>
-                                            <Image Height="100" Stretch="Uniform"/>
-                                            <TextBlock Text="Koenigsegg" FontWeight="Bold" FontSize="14"/>
-                                            <TextBlock Text="Sport" Foreground="Gray"/>
-                                            <TextBlock Text="90L · Manual · 2 People" FontSize="12" Margin="0 5"/>
-                                            <TextBlock Text="$99.00/day" FontWeight="Bold" FontSize="14"/>
-                                            <Button Content="Rent Now" Background="#2C63E4" Foreground="White" Margin="0 10 0 0" Width="100"/>
-                                        </StackPanel>
-                                    </Border>
-
-                                    <Border BorderBrush="#DDD" BorderThickness="1" CornerRadius="20" Width="250" Padding="10" Margin="10" Background="White">
-                                        <StackPanel>
-                                            <Image Height="100" Stretch="Uniform"/>
-                                            <TextBlock Text="Koenigsegg" FontWeight="Bold" FontSize="14"/>
-                                            <TextBlock Text="Sport" Foreground="Gray"/>
-                                            <TextBlock Text="90L · Manual · 2 People" FontSize="12" Margin="0 5"/>
-                                            <TextBlock Text="$99.00/day" FontWeight="Bold" FontSize="14"/>
-                                            <Button Content="Rent Now" Background="#2C63E4" Foreground="White" Margin="0 10 0 0" Width="100"/>
-                                        </StackPanel>
-                                    </Border>
-
-                                    <Border BorderBrush="#DDD" BorderThickness="1" CornerRadius="20" Width="250" Padding="10" Margin="10" Background="White">
-                                        <StackPanel>
-                                            <Image Height="100" Stretch="Uniform"/>
-                                            <TextBlock Text="Koenigsegg" FontWeight="Bold" FontSize="14"/>
-                                            <TextBlock Text="Sport" Foreground="Gray"/>
-                                            <TextBlock Text="90L · Manual · 2 People" FontSize="12" Margin="0 5"/>
-                                            <TextBlock Text="$99.00/day" FontWeight="Bold" FontSize="14"/>
-                                            <Button Content="Rent Now" Background="#2C63E4" Foreground="White" Margin="0 10 0 0" Width="100"/>
-                                        </StackPanel>
-                                    </Border>
-
-                                    <Border BorderBrush="#DDD" BorderThickness="1" CornerRadius="20" Width="250" Padding="10" Margin="10" Background="White">
-                                        <StackPanel>
-                                            <Image Height="100" Stretch="Uniform"/>
-                                            <TextBlock Text="Koenigsegg" FontWeight="Bold" FontSize="14"/>
-                                            <TextBlock Text="Sport" Foreground="Gray"/>
-                                            <TextBlock Text="90L · Manual · 2 People" FontSize="12" Margin="0 5"/>
-                                            <TextBlock Text="$99.00/day" FontWeight="Bold" FontSize="14"/>
-                                            <Button Content="Rent Now" Background="#2C63E4" Foreground="White" Margin="0 10 0 0" Width="100"/>
-                                        </StackPanel>
-                                    </Border>
-
-                                    <!-- Card 3 -->
-                                    <Border BorderBrush="#DDD" BorderThickness="1" CornerRadius="20" Width="250" Padding="10" Margin="10" Background="White">
-                                        <StackPanel>
-                                            <Image  Height="100" Stretch="Uniform"/>
-                                            <TextBlock Text="Rolls Royce" FontWeight="Bold" FontSize="14"/>
-                                            <TextBlock Text="Sport" Foreground="Gray"/>
-                                            <TextBlock Text="80L · Manual · 2 People" FontSize="12" Margin="0 5"/>
-                                            <TextBlock>
-                                    <Run Text="$200.00/day" FontWeight="Bold"/>
-                                            </TextBlock>
-                                            <Button Content="Rent Now" Background="#2C63E4" Foreground="White" Margin="0 10 0 0" Width="100"/>
-                                        </StackPanel>
-                                    </Border>
-                                    <!-- Card 4 -->
-                                    <Border BorderBrush="#DDD" BorderThickness="1" CornerRadius="20" Width="250" Padding="10" Margin="10" Background="White">
-                                        <StackPanel>
-                                            <Image Height="100" Stretch="Uniform"/>
-                                            <TextBlock Text="CRV" FontWeight="Bold" FontSize="14"/>
-                                            <TextBlock Text="Sport" Foreground="Gray"/>
-                                            <TextBlock Text="80L · Manual · 2 People" FontSize="12" Margin="0 5"/>
-                                            <TextBlock>
-                                    <Run Text="$80.00/day" FontWeight="Bold"/>
-                                    <Run Text=" $100.00" TextDecorations="Strikethrough" Foreground="Gray" FontSize="11"/>
-                                            </TextBlock>
-                                            <Button Content="Rent Now" Background="#2C63E4" Foreground="White" Margin="0 10 0 0" Width="100"/>
-                                        </StackPanel>
-                                    </Border>
+                                <WrapPanel Margin="0" ItemHeight="Auto" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                                        <filteroption:FilterCarView Grid.Column="1" Margin="0 10 0 10"/>
+                                    </ScrollViewer>
                                 </WrapPanel>
 
                             </StackPanel>
                         </Border>
                     </StackPanel>
                 </Grid>
-            <!--Footer-->
-                <components:Footer/>
+                <!--Footer-->
+                <shared:Footer/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

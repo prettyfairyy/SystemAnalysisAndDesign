@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using SystemAnalysisAndDesign.Models;
+using SystemAnalysisAndDesign.ViewModels.CategoryCarRentViewModel;
 
 namespace SystemAnalysisAndDesign.Views.CategoryCarRentView
 {
@@ -19,9 +21,14 @@ namespace SystemAnalysisAndDesign.Views.CategoryCarRentView
     /// </summary>
     public partial class CategoryCarRentMainView : Window
     {
+        private readonly RentalDbContext _context;
+
         public CategoryCarRentMainView()
         {
             InitializeComponent();
+
+            _context = new RentalDbContext();
+            this.DataContext = new FilterOptionViewModel(_context); 
         }
     }
 }
