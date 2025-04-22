@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using SystemAnalysisAndDesign.Models;
+using SystemAnalysisAndDesign.ViewModels.AdminCarRentViewModel;
 
 namespace SystemAnalysisAndDesign.Views.AdminCarRentView
 {
@@ -19,9 +21,18 @@ namespace SystemAnalysisAndDesign.Views.AdminCarRentView
     /// </summary>
     public partial class AdminCarRentMainView : Window
     {
+        private readonly RentalDbContext _context;
         public AdminCarRentMainView()
         {
             InitializeComponent();
+
+            _context = new RentalDbContext();
+            this.DataContext = new AdminCarListViewModel(_context);
+        }
+
+        private void AdminCarListView_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -17,7 +17,7 @@ namespace SystemAnalysisAndDesign.Models
         public DbSet<Payment> Payments { get; set; }
         public RentalDbContext()
         {
-            Database.EnsureCreated(); // tạo DB nếu chưa có
+            Database.EnsureCreated(); 
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
