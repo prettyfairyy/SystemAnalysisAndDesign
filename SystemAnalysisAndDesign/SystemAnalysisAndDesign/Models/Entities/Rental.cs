@@ -8,9 +8,9 @@ namespace SystemAnalysisAndDesign.Models.Entities
 {
     public class Rental
     {
-        public int RentalId { get; set; }
-        public int CustomerId { get; set; }
-        public int CarId { get; set; }
+        public string RentalId { get; set; }
+        public string CustomerId { get; set; }
+        public string CarId { get; set; }
 
         public string? PickUpLocation { get; set; }
         public DateTime? PickUpDate { get; set; }

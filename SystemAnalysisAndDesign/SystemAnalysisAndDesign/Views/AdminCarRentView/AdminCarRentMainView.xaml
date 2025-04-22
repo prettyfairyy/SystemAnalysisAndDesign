@@ -1,0 +1,184 @@
+﻿<Window x:Class="SystemAnalysisAndDesign.Views.AdminCarRentView.AdminCarRentMainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:SystemAnalysisAndDesign.Views.AdminCarRentView"
+        mc:Ignorable="d"
+        xmlns:components="clr-namespace:SystemAnalysisAndDesign.Views.Share"
+        xmlns:carlist="clr-namespace:SystemAnalysisAndDesign.Views.AdminCarRentView.ComponentAdminCarRentView"
+        Title="AdminCarRentMainView" Height="auto" Width="1280" Background="#EFF3FD">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.12*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Header-->
+        <Grid Grid.Row="0">
+            <components:Header/>
+        </Grid>
+
+        <!--Main-->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition Width="0.8*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Sidebar Menu -->
+            <StackPanel Background="White" Grid.Column="0" Margin="0,2,0,0">
+                <StackPanel Margin="20">
+                    <TextBlock Text="MAIN MENU" FontWeight="Bold" Foreground="Gray" Margin="0 0 0 10"/>
+
+                    <!-- Dashboard -->
+                    <Border Background="White" CornerRadius="7" Margin="0 5" Height="40">
+                        <Button Background="Transparent" BorderThickness="0">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Home" Width="20" Height="20" Margin="5" VerticalAlignment="Center" Foreground="#3A63F1"/>
+                                <TextBlock Text="Dashboard" Foreground="#3A63F1" FontWeight="Bold" Margin="0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </Border>
+
+                    <!-- Car Rent -->
+                    <Border Background="#3A63F1" CornerRadius="7" Margin="0 5" Height="40">
+                        <Button Background="Transparent" BorderThickness="0">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Car" Width="20" Height="20" Margin="5" VerticalAlignment="Center" Foreground="White"/>
+                                <TextBlock Text="Car Rent" Foreground="White" FontWeight="Bold" Margin="0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </Border>
+
+                    <!-- Insight -->
+                    <Border Background="White" CornerRadius="7" Margin="0 5" Height="40">
+                        <Button Background="Transparent" BorderThickness="0">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Analytics" Width="20" Height="20" Margin="5" VerticalAlignment="Center" Foreground="#3A63F1"/>
+                                <TextBlock Text="Insight" Foreground="#3A63F1" FontWeight="Bold" Margin="0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </Border>
+
+                    <!-- Reimburse -->
+                    <Border Background="White" CornerRadius="7" Margin="0 5" Height="40">
+                        <Button Background="Transparent" BorderThickness="0">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="CurrencyUsd" Width="20" Height="20" Margin="5" VerticalAlignment="Center" Foreground="#3A63F1"/>
+                                <TextBlock Text="Reimburse" Foreground="#3A63F1" FontWeight="Bold" Margin="0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </Border>
+
+                    <!-- Inbox -->
+                    <Border Background="White" CornerRadius="7" Margin="0 5" Height="40">
+                        <Button Background="Transparent" BorderThickness="0">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Chat" Width="20" Height="20" Margin="5" VerticalAlignment="Center" Foreground="#3A63F1"/>
+                                <TextBlock Text="Inbox" Foreground="#3A63F1" FontWeight="Bold" Margin="0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </Border>
+
+                    <!-- Calendar -->
+                    <Border Background="White" CornerRadius="7" Margin="0 5" Height="40">
+                        <Button Background="Transparent" BorderThickness="0">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="DateRange" Width="20" Height="20" Margin="5" VerticalAlignment="Center" Foreground="#3A63F1"/>
+                                <TextBlock Text="Calendar" Foreground="#3A63F1" FontWeight="Bold" Margin="0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </Border>
+
+                    <!-- Preferences title -->
+                    <TextBlock Text="PREFERENCES" FontWeight="Bold" Foreground="Gray" Margin="0 30 0 10"/>
+
+                    <!-- Settings -->
+                    <Border Background="White" CornerRadius="7" Margin="0 5" Height="40">
+                        <Button Background="Transparent" BorderThickness="0">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Settings" Width="20" Height="20" Margin="5" VerticalAlignment="Center" Foreground="#3A63F1"/>
+                                <TextBlock Text="Settings" Foreground="#3A63F1" FontWeight="Bold" Margin="0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </Border>
+
+                    <!-- Help -->
+                    <Border Background="White" CornerRadius="7" Margin="0 5" Height="40">
+                        <Button Background="Transparent" BorderThickness="0">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="HelpBox" Width="20" Height="20" Margin="5" VerticalAlignment="Center" Foreground="#3A63F1"/>
+                                <TextBlock Text="Help" Foreground="#3A63F1" FontWeight="Bold" Margin="0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </Border>
+
+                    <!-- Logout (align bottom if needed) -->
+                    <Border Background="White" CornerRadius="7" Height="40" Margin="0,90,0,0">
+                        <Button Background="Transparent" BorderThickness="0">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Logout" Width="20" Height="20" Margin="5" VerticalAlignment="Center" Foreground="#3A63F1"/>
+                                <TextBlock Text="Log out" Foreground="#3A63F1" FontWeight="Bold" Margin="0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+
+            <Grid Grid.Column="1" Margin="20" Background="WHITE">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <!-- Cho thanh tiêu đề và ô tìm kiếm -->
+                    <RowDefinition Height="*"/>
+                    <!-- ScrollViewer sẽ hoạt động ở đây -->
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <!-- Cars Text -->
+                            <ColumnDefinition Width="Auto"/>
+                            <!-- Search box -->
+                            <ColumnDefinition Width="*"/>
+                            <!-- Add icon, đẩy về phải -->
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Title: Cars -->
+                        <TextBlock Grid.Column="0" Text="Cars" FontWeight="Bold" FontSize="18"
+                   VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,10"/>
+
+                        <!-- Search -->
+                        <Border Grid.Column="1" CornerRadius="20" BorderBrush="#E0E0E0"
+                BorderThickness="1" Padding="3" Width="400" Height="35"
+                HorizontalAlignment="Center">
+                            <DockPanel Margin="5">
+                                <materialDesign:PackIcon Kind="Magnify" Width="18" Height="18" Margin="0,0,5,0" VerticalAlignment="Center" Foreground="Gray"/>
+                                <TextBox Width="400" FontSize="12" VerticalAlignment="Center"
+                                        BorderThickness="0" Background="Transparent"
+                                        Foreground="Gray" Text="Search..."/>        
+                            </DockPanel>
+                        </Border>
+
+                        <!-- Add Button -->
+                        <Border Grid.Column="2" Width="35" Height="35" CornerRadius="17.5"
+                                Margin="20,10" Background="#3A63F1" HorizontalAlignment="Right">
+                            <Button Background="Transparent" BorderThickness="0" ToolTip="Add new car"
+                                    Width="24" Height="24" Padding="0">
+                                <materialDesign:PackIcon Kind="AddBold" Width="22" Height="22"
+                                                         Foreground="White" FontWeight="Bold"/>
+                            </Button>
+                        </Border>
+                    </Grid>
+                </Border>
+                
+                <!-- Data Grid-->
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="auto">
+                    <carlist:AdminCarListView />
+                </ScrollViewer>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

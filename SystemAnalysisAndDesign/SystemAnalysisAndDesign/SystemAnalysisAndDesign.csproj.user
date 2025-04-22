@@ -7,6 +7,24 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\AdminCarRentView\AdminCarRentMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AdminCarRentView\ComponentAdminCarRentView\AdminCarListView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AdminDashboardView\AdminDashboardMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\CategoryCarRentView\CategoryCarRentMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\CategoryCarRentView\ComponentCategoryCarRentView\FilterCarView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\CategoryCarRentView\ComponentCategoryCarRentView\FilterOptionView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\DetailCarRentView\DetailCarRentMainView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -16,8 +34,29 @@
     <Compile Update="Views\Share\Header.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Share\UserControl1.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Views\AdminCarRentView\AdminCarRentMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AdminCarRentView\ComponentAdminCarRentView\AdminCarListView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AdminDashboardView\AdminDashboardMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CategoryCarRentView\CategoryCarRentMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CategoryCarRentView\ComponentCategoryCarRentView\FilterCarView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CategoryCarRentView\ComponentCategoryCarRentView\FilterOptionView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\DetailCarRentView\DetailCarRentMainView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -28,6 +67,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Share\Header.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Share\UserControl1.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

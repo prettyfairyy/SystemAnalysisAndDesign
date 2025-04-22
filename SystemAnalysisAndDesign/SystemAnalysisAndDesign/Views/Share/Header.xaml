@@ -29,7 +29,7 @@
                     <materialDesign:PackIcon Kind="Magnify" Width="20" Height="20" Margin="0,0,5,0" VerticalAlignment="Center" Foreground="Gray"/>
                     <TextBox Width="400" FontSize="14" VerticalAlignment="Center" 
                          BorderThickness="0" Background="Transparent" 
-                         Foreground="Gray" Text="Search something here"/>
+                         Foreground="Gray" Text="Search something here" TextChanged="TextBox_TextChanged"/>
                     <materialDesign:PackIcon Kind="Tune" Width="20" Height="20" Margin="0,0,5,0" VerticalAlignment="Center" HorizontalAlignment="right" Foreground="Gray"/>
                 </DockPanel>
             </Border>

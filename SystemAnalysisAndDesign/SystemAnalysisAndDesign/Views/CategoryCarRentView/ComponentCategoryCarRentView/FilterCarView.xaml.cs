@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SystemAnalysisAndDesign.Views.Share
+namespace SystemAnalysisAndDesign.Views.CategoryCarRentView.ComponentCategoryCarRentView
 {
     /// <summary>
-    /// Interaction logic for Header.xaml
+    /// Interaction logic for FilterCarView.xaml
     /// </summary>
-    public partial class Header : UserControl
+    public partial class FilterCarView : UserControl
     {
-        public Header()
+        public FilterCarView()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }
