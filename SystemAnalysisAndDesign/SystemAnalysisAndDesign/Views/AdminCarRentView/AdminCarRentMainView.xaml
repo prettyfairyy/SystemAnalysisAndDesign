@@ -7,7 +7,8 @@
         xmlns:local="clr-namespace:SystemAnalysisAndDesign.Views.AdminCarRentView"
         mc:Ignorable="d"
         xmlns:components="clr-namespace:SystemAnalysisAndDesign.Views.Share"
-        Title="AdminCarRentMainView" Height="760" Width="1280" Background="#EFF3FD">
+        xmlns:carlist="clr-namespace:SystemAnalysisAndDesign.Views.AdminCarRentView.ComponentAdminCarRentView"
+        Title="AdminCarRentMainView" Height="auto" Width="1280" Background="#EFF3FD">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.12*"/>
@@ -126,69 +127,58 @@
                 </StackPanel>
             </StackPanel>
 
-            <StackPanel Grid.Column="1" Margin="20" Background="WHITE">
-                <Border>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Models" FontWeight="Bold" FontSize="18" Margin="10"/>
-                        <Border CornerRadius="20" BorderBrush="#E0E0E0" BorderThickness="1" Padding="5" Width="400" Margin="3">
-                            <DockPanel >
-                                <materialDesign:PackIcon Kind="Magnify" Width="20" Height="20" Margin="0,0,5,0" VerticalAlignment="Center" Foreground="Gray"/>
-                                <TextBox Width="400" FontSize="14" VerticalAlignment="Center" 
-             BorderThickness="0" Background="Transparent" 
-             Foreground="Gray" Text="Search something here"/>
+            <Grid Grid.Column="1" Margin="20" Background="WHITE">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <!-- Cho thanh tiêu đề và ô tìm kiếm -->
+                    <RowDefinition Height="*"/>
+                    <!-- ScrollViewer sẽ hoạt động ở đây -->
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <!-- Cars Text -->
+                            <ColumnDefinition Width="Auto"/>
+                            <!-- Search box -->
+                            <ColumnDefinition Width="*"/>
+                            <!-- Add icon, đẩy về phải -->
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Title: Cars -->
+                        <TextBlock Grid.Column="0" Text="Cars" FontWeight="Bold" FontSize="18"
+                   VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,10"/>
+
+                        <!-- Search -->
+                        <Border Grid.Column="1" CornerRadius="20" BorderBrush="#E0E0E0"
+                BorderThickness="1" Padding="3" Width="400" Height="35"
+                HorizontalAlignment="Center">
+                            <DockPanel Margin="5">
+                                <materialDesign:PackIcon Kind="Magnify" Width="18" Height="18" Margin="0,0,5,0" VerticalAlignment="Center" Foreground="Gray"/>
+                                <TextBox Width="400" FontSize="12" VerticalAlignment="Center"
+                                        BorderThickness="0" Background="Transparent"
+                                        Foreground="Gray" Text="Search..."/>        
                             </DockPanel>
+                        </Border>
+
+                        <!-- Add Button -->
+                        <Border Grid.Column="2" Width="35" Height="35" CornerRadius="17.5"
+                                Margin="20,10" Background="#3A63F1" HorizontalAlignment="Right">
+                            <Button Background="Transparent" BorderThickness="0" ToolTip="Add new car"
+                                    Width="24" Height="24" Padding="0">
+                                <materialDesign:PackIcon Kind="AddBold" Width="22" Height="22"
+                                                         Foreground="White" FontWeight="Bold"/>
+                            </Button>
+                        </Border>
+                    </Grid>
                 </Border>
-            </StackPanel>
-                </Border>
-                <ScrollViewer  VerticalScrollBarVisibility="Hidden" >
-                    <DataGrid x:Name="CarRentDataGrid" AutoGenerateColumns="False"
-                              HeadersVisibility="Column" RowHeight="90"
-                              CanUserAddRows="False" CanUserDeleteRows="False"
-                               GridLinesVisibility="None"
-                              BorderThickness="0" Background="White"
-                              HorizontalGridLinesBrush="LightGray">
-                        <DataGrid.Columns>
-                            <!-- Car Model Column with Image and Name -->
-                            <DataGridTemplateColumn Header="Car Model" Width="200">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                            <Image Source="{Binding ImagePath}" Width="60" Height="40" Stretch="UniformToFill" Margin="5"/>
-                                            <StackPanel Orientation="Vertical" Margin="10,0">
-                                                <TextBlock Text="{Binding Model}" FontWeight="Bold" FontSize="14"/>
-                                                <TextBlock Text="{Binding Type}" Foreground="Gray" FontSize="12"/>
-                                            </StackPanel>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-
-                            <!-- Location -->
-                            <DataGridTextColumn Header="Location" Binding="{Binding Location}" Width="*"/>
-
-                            <!-- Date -->
-                            <DataGridTextColumn Header="Date" Binding="{Binding Date}" Width="100"/>
-
-                            <!-- Time -->
-                            <DataGridTextColumn Header="Time" Binding="{Binding Time}" Width="80"/>
-
-                            <!-- Status with styled badge -->
-                            <DataGridTemplateColumn Header="Status" Width="120">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <Border CornerRadius="12" Padding="8,2" Background="{Binding StatusColor}" HorizontalAlignment="Center">
-                                            <TextBlock Text="{Binding Status}" FontWeight="Bold" Foreground="White" FontSize="12"/>
-                                        </Border>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-
-                            <!-- Amount -->
-                            <DataGridTextColumn Header="Amount" Binding="{Binding Amount, StringFormat=C}" Width="100"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
+                
+                <!-- Data Grid-->
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="auto">
+                    <carlist:AdminCarListView />
                 </ScrollViewer>
-            </StackPanel>
+
+            </Grid>
         </Grid>
     </Grid>
 </Window>

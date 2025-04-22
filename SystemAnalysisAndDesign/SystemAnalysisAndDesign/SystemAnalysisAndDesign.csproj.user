@@ -10,6 +10,9 @@
     <Compile Update="Views\AdminCarRentView\AdminCarRentMainView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\AdminCarRentView\ComponentAdminCarRentView\AdminCarListView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\AdminDashboardView\AdminDashboardMainView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -37,6 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\AdminCarRentView\AdminCarRentMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AdminCarRentView\ComponentAdminCarRentView\AdminCarListView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\AdminDashboardView\AdminDashboardMainView.xaml">
