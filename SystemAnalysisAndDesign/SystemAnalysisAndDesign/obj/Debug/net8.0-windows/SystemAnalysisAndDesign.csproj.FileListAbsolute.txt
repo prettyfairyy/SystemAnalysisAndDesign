@@ -1,0 +1,12 @@
+C:\Github_Carrental\SystemAnalysisAndDesign\SystemAnalysisAndDesign\obj\Debug\net8.0-windows\Views\MainWindowView.g.cs
+C:\Github_Carrental\SystemAnalysisAndDesign\SystemAnalysisAndDesign\obj\Debug\net8.0-windows\App.g.cs
+C:\Github_Carrental\SystemAnalysisAndDesign\SystemAnalysisAndDesign\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Github_Carrental\SystemAnalysisAndDesign\SystemAnalysisAndDesign\obj\Debug\net8.0-windows\SystemAnalysisAndDesign_MarkupCompile.cache
+C:\Github_Carrental\SystemAnalysisAndDesign\SystemAnalysisAndDesign\obj\Debug\net8.0-windows\SystemAnalysisAndDesign_MarkupCompile.lref
+C:\Github_Carrental\SystemAnalysisAndDesign\SystemAnalysisAndDesign\obj\Debug\net8.0-windows\Views\MainWindowView.baml
+C:\Github_Carrental\SystemAnalysisAndDesign\SystemAnalysisAndDesign\obj\Debug\net8.0-windows\SystemAnalysisAndDesign.g.resources
+C:\Github_Carrental\SystemAnalysisAndDesign\SystemAnalysisAndDesign\obj\Debug\net8.0-windows\SystemAnalysisAndDesign.GeneratedMSBuildEditorConfig.editorconfig
+C:\Github_Carrental\SystemAnalysisAndDesign\SystemAnalysisAndDesign\obj\Debug\net8.0-windows\SystemAnalysisAndDesign.AssemblyInfoInputs.cache
+C:\Github_Carrental\SystemAnalysisAndDesign\SystemAnalysisAndDesign\obj\Debug\net8.0-windows\SystemAnalysisAndDesign.AssemblyInfo.cs
+C:\Github_Carrental\SystemAnalysisAndDesign\SystemAnalysisAndDesign\obj\Debug\net8.0-windows\SystemAnalysisAndDesign.csproj.CoreCompileInputs.cache
+C:\Github_Carrental\SystemAnalysisAndDesign\SystemAnalysisAndDesign\obj\Debug\net8.0-windows\SystemAnalysisAndDesign.sourcelink.json

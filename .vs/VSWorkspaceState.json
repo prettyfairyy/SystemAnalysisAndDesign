@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\SystemAnalysisAndDesign",
+    "\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign",
+    "\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\Models",
+    "\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\Models\\Entities",
+    "\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\Models\\Services",
+    "\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\ViewModels",
+    "\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\Views"
+  ],
+  "SelectedNode": "\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\Models\\Entities\\User.cs",
+  "PreviewInSolutionExplorer": false
+}
