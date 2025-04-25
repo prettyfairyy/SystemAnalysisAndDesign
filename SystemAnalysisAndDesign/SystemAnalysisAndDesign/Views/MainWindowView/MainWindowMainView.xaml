@@ -6,9 +6,14 @@
         xmlns:components="clr-namespace:SystemAnalysisAndDesign.Views.Share"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:viewModels="clr-namespace:SystemAnalysisAndDesign.ViewModels.MainWindowMainViewModel"
         mc:Ignorable="d"
         Title="MainWindowMainView" Height="auto" Width="1280">
     <Grid>
+        <Window.DataContext>
+            <viewModels:MainWindowMainViewModel/>
+        </Window.DataContext>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="0.12*"/>
             <RowDefinition Height="*"/>
@@ -178,27 +183,27 @@
                 </Grid>
 
                 <!-- Car selection -->
-                <Grid Grid.Row="3" Margin="20,0,20,50">
+                <!--<Grid Grid.Row="3" Margin="20,0,20,50">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
-                        <!-- Car 1 -->
+                        ~1~ Car 1 @1@
                         <ColumnDefinition Width="*" />
-                        <!-- Car 2 -->
+                        ~1~ Car 2 @1@
                         <ColumnDefinition Width="*" />
-                        <!-- Car 3 -->
+                        ~1~ Car 3 @1@
                     </Grid.ColumnDefinitions>
 
                     <Grid Grid.Column="0" Margin="10">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="100" />
-                                <!-- Car name -->
+                                ~1~ Car name @1@
                                 <RowDefinition Height="Auto" />
-                                <!-- Image -->
+                                ~1~ Image @1@
                                 <RowDefinition Height="Auto" />
-                                <!-- Information -->
+                                ~1~ Information @1@
                                 <RowDefinition Height="Auto" />
-                                <!-- Price and rent -->
+                                ~1~ Price and rent @1@
                             </Grid.RowDefinitions>
 
                             <Border Grid.Row="0" Background="#E3F2FD" CornerRadius="20,20,0,0">
@@ -274,13 +279,13 @@
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="100" />
-                                <!-- Car name -->
+                                ~1~ Car name @1@
                                 <RowDefinition Height="Auto" />
-                                <!-- Image -->
+                                ~1~ Image @1@
                                 <RowDefinition Height="Auto" />
-                                <!-- Information -->
+                                ~1~ Information @1@
                                 <RowDefinition Height="Auto" />
-                                <!-- Price and rent -->
+                                ~1~ Price and rent @1@
                             </Grid.RowDefinitions>
 
                             <Border Grid.Row="0" Background="#E3F2FD" CornerRadius="20,20,0,0">
@@ -356,13 +361,13 @@
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="100" />
-                                <!-- Car name -->
+                                ~1~ Car name @1@
                                 <RowDefinition Height="Auto" />
-                                <!-- Image -->
+                                ~1~ Image @1@
                                 <RowDefinition Height="Auto" />
-                                <!-- Information -->
+                                ~1~ Information @1@
                                 <RowDefinition Height="Auto" />
-                                <!-- Price and rent -->
+                                ~1~ Price and rent @1@
                             </Grid.RowDefinitions>
 
                             <Border Grid.Row="0" Background="#E3F2FD" CornerRadius="20,20,0,0">
@@ -433,7 +438,100 @@
                             </Border>
                         </Grid>
                     </Grid>
-                </Grid>
+                </Grid>-->
+                
+                 <ItemsControl Grid.Row="3" ItemsSource="{Binding FeaturedCars}" Margin="20,0,20,50">
+                    <!-- Định nghĩa cách sắp xếp các item -->
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <!-- Sử dụng UniformGrid để tự động chia cột đều nhau -->
+                            <UniformGrid Columns="3" HorizontalAlignment="Center"/>
+                            <!-- Hoặc dùng WrapPanel nếu muốn tự xuống dòng -->
+                            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+
+                    <!-- Định nghĩa giao diện cho TỪNG item (mỗi chiếc Car) -->
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <!-- Bọc mỗi card trong một Border để dễ dàng thêm Margin/Padding -->
+                            <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="20" Margin="10" MaxWidth="380">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="100" /> <!-- Car name -->
+                                        <RowDefinition Height="400" /> <!-- Image -->
+                                        <RowDefinition Height="600" /> <!-- Information -->
+                                        <RowDefinition Height="300" /> <!-- Price and rent -->
+                                    </Grid.RowDefinitions>
+
+                                    <!-- Row 0: Car Name -->
+                                    <Border Grid.Row="0" Background="#E3F2FD" CornerRadius="20,20,0,0">
+                                        <StackPanel VerticalAlignment="Center">
+                                            <!-- Binding tới Model hoặc Brand + Model -->
+                                            <TextBlock Text="{Binding Model}" FontWeight="Bold" FontSize ="24" TextAlignment="Center" Margin="10"/>
+                                            <TextBlock Text="{Binding Brand}" FontSize ="16" TextAlignment="Center" Opacity="0.8"/>
+                                        </StackPanel>
+                                    </Border>
+
+                                    <!-- Row 1: Image -->
+                                    <Grid Grid.Row="1" Background="WhiteSmoke">
+                                        <!-- Binding tới ImagePath -->
+                                        <Image Source="{Binding ImagePath}" Height="170" Stretch="Uniform" Margin="5"/>
+                                    </Grid>
+
+                                    <!-- Row 2: Information -->
+                                    <Border Grid.Row="2" Background="White" Padding="10" BorderThickness="0,1,0,0" BorderBrush="LightGray">
+                                        <Grid HorizontalAlignment="Center">
+                                            <Grid.ColumnDefinitions>
+                                                <!-- Bỏ cột Fuel và Speed nếu không có dữ liệu -->
+                                                <!-- <ColumnDefinition Width="Auto" /> -->
+                                                <ColumnDefinition Width="Auto" /> <!-- Capacity -->
+                                                <!-- <ColumnDefinition Width="Auto" /> -->
+                                            </Grid.ColumnDefinitions>
+
+                                            <!-- Chỉ hiển thị Capacity vì nó có trong Car.cs -->
+                                            <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0">
+                                                <materialDesign:PackIcon Kind="Person" Width="24" Height="24" Foreground="#1A237E" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                                                <!-- Binding tới Capacity -->
+                                                <TextBlock Text="{Binding Capacity}" VerticalAlignment="Center" TextAlignment="Center"/>
+                                                <TextBlock Text=" Seats" VerticalAlignment="Center" TextAlignment="Center" Margin="2,0,0,0"/>
+                                            </StackPanel>
+
+                                            <!-- *** Ghi chú: Nếu bạn thêm FuelConsumption và MaxSpeed vào Car.cs, hãy bỏ comment và binding các cột sau: *** -->
+                                            <!--
+                                            <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0">
+                                                <materialDesign:PackIcon Kind="Fuel" Width="24" Height="24" Foreground="#1A237E" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                                                <TextBlock Text="{Binding FuelConsumption}" VerticalAlignment="Center" TextAlignment="Center"/>
+                                            </StackPanel>
+                                            <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0">
+                                                <materialDesign:PackIcon Kind="Speedometer" Width="24" Height="24" Foreground="#1A237E" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                                                <TextBlock Text="{Binding MaxSpeed}" VerticalAlignment="Center" TextAlignment="Center"/>
+                                            </StackPanel>
+                                            -->
+                                        </Grid>
+                                    </Border>
+
+                                    <!-- Row 3: Price and Rent Button -->
+                                    <Border Grid.Row="3" Background="White" CornerRadius="0,0,20,20" BorderThickness="0,1,0,0" BorderBrush="LightGray">
+                                        <StackPanel>
+                                            <!-- Binding tới PricePerDay, định dạng tiền tệ -->
+                                            <TextBlock Text="{Binding PricePerDay, StringFormat='VND {0:N0}/day'}"
+                                                       TextAlignment="Center" FontWeight="Bold" FontSize="20" Padding="0,15,0,20"/>
+                                            <!-- Binding Button Command -->
+                                            <Button Content ="Rent"
+                                                    Background="#007BFF" Foreground="#FFFFFF"
+                                                    Width ="100" Height="30" HorizontalAlignment ="Center" Margin="0,0,0,20"
+                                                    Style="{StaticResource MaterialDesignFlatButton}" 
+                                                    BorderThickness="0"
+                                                    Command="{Binding DataContext.RentCarCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                                    CommandParameter="{Binding}"/> <!-- CommandParameter là chính Car object hiện tại -->
+                                        </StackPanel>
+                                    </Border>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
 
                 <!-- Brandname -->
                 <Grid Grid.Row="4">

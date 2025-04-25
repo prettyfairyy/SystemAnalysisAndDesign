@@ -9,6 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SystemAnalysisAndDesign.Models;
+using SystemAnalysisAndDesign.ViewModels.MainWindowMainViewModel;
 
 namespace SystemAnalysisAndDesign.Views.MainWindowView
 {
@@ -21,6 +22,7 @@ namespace SystemAnalysisAndDesign.Views.MainWindowView
         {
             InitializeComponent();
             var context = new RentalDbContext(); // sẽ trigger EnsureCreated
+            this.DataContext = new MainWindowMainViewModel();
         }
     }
 }
