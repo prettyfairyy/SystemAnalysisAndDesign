@@ -46,7 +46,6 @@
 
   <ItemGroup>
     <Folder Include="Views\DetailCarRentView\ComponentDetailCarRentView\" />
-    <Folder Include="Views\MainWindowView\ComponentMainWindowView\" />
   </ItemGroup>
 
   <ItemGroup>
