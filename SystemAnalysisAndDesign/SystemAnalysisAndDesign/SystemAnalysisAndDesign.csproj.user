@@ -7,7 +7,13 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\AdminCarRentView\AdminCarRentAddMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\AdminCarRentView\AdminCarRentMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AdminCarRentView\ComponentAdminCarRentView\AdminAddCarView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\AdminCarRentView\ComponentAdminCarRentView\AdminCarListView.xaml.cs">
@@ -28,6 +34,9 @@
     <Compile Update="Views\DetailCarRentView\DetailCarRentMainView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\MainWindowView\ComponentMainWindowView\CarCard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Share\Footer.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -37,9 +46,18 @@
     <Compile Update="Views\Share\UserControl1.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\SignInandRegisterView\SignInMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Views\AdminCarRentView\AdminCarRentAddMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\AdminCarRentView\AdminCarRentMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AdminCarRentView\ComponentAdminCarRentView\AdminAddCarView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\AdminCarRentView\ComponentAdminCarRentView\AdminCarListView.xaml">
@@ -60,6 +78,9 @@
     <Page Update="Views\DetailCarRentView\DetailCarRentMainView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\MainWindowView\ComponentMainWindowView\CarCard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\MainWindowView\MainWindowMainView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -70,6 +91,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Share\UserControl1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SignInandRegisterView\SignInMainView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
