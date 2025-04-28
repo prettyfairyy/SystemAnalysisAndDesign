@@ -3,12 +3,14 @@
     "",
     "\\SystemAnalysisAndDesign",
     "\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign",
+    "\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\Helpers",
+    "\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\Image",
     "\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\Models",
     "\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\Models\\Entities",
     "\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\Models\\Services",
     "\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\ViewModels",
     "\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\Views"
   ],
-  "SelectedNode": "\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\Models\\Entities\\User.cs",
+  "SelectedNode": "\\SystemAnalysisAndDesign\\SystemAnalysisAndDesign\\Views\\PaymentView.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

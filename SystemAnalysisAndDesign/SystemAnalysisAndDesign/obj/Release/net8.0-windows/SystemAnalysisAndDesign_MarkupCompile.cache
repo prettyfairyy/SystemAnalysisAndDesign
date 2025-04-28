@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET8_0;NETCOREAPP
 C:\Github_Carrental\SystemAnalysisAndDesign\SystemAnalysisAndDesign\App.xaml
-1-1634757952
+2-853125069
 
-13-68283747
+161927210405
 1981124507420
-Views\MainWindowView.xaml;
+Views\MainWindowView.xaml;Views\PaymentView.xaml;
 
-False
+True
 

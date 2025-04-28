@@ -10,3 +10,5 @@ C:\Github_Carrental\SystemAnalysisAndDesign\SystemAnalysisAndDesign\obj\Debug\ne
 C:\Github_Carrental\SystemAnalysisAndDesign\SystemAnalysisAndDesign\obj\Debug\net8.0-windows\SystemAnalysisAndDesign.AssemblyInfo.cs
 C:\Github_Carrental\SystemAnalysisAndDesign\SystemAnalysisAndDesign\obj\Debug\net8.0-windows\SystemAnalysisAndDesign.csproj.CoreCompileInputs.cache
 C:\Github_Carrental\SystemAnalysisAndDesign\SystemAnalysisAndDesign\obj\Debug\net8.0-windows\SystemAnalysisAndDesign.sourcelink.json
+C:\Github_Carrental\SystemAnalysisAndDesign\SystemAnalysisAndDesign\obj\Debug\net8.0-windows\Views\PaymentView.g.cs
+C:\Github_Carrental\SystemAnalysisAndDesign\SystemAnalysisAndDesign\obj\Debug\net8.0-windows\Views\PaymentView.baml
