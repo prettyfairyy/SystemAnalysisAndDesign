@@ -32,7 +32,7 @@
 
                     <!-- Dashboard -->
                     <Border Background="#3A63F1" CornerRadius="7" Margin="0 5" Height="40">
-                        <Button Background="Transparent" BorderThickness="0">
+                        <Button Background="Transparent" BorderThickness="0" >
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="Home" Width="20" Height="20" Margin="5" VerticalAlignment="Center" Foreground="White"/>
                                 <TextBlock Text="Dashboard" Foreground="White" FontWeight="Bold" Margin="0" VerticalAlignment="Center"/>
@@ -42,7 +42,7 @@
 
                     <!-- Car Rent -->
                     <Border Background="White" CornerRadius="7" Margin="0 5" Height="40">
-                        <Button Background="Transparent" BorderThickness="0">
+                        <Button Background="Transparent" BorderThickness="0" Click="btn_CarRentList">
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="Car" Width="20" Height="20" Margin="5" VerticalAlignment="Center" Foreground="#3A63F1"/>
                                 <TextBlock Text="Car Rent" Foreground="#3A63F1" FontWeight="Bold" Margin="0" VerticalAlignment="Center"/>
