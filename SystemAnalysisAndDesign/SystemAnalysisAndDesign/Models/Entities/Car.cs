@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,11 @@ namespace SystemAnalysisAndDesign.Models.Entities
         public string? Color { get; set; }
         public string? Description { get; set; }
         public string? ImagePath { get; set; }
+        [NotMapped]
+        public string Steering { get; set; } = "Manual";
+        [NotMapped]
+        public string Gasoline { get; set; } = "70L";
+
         public ICollection<Rental> Rentals { get; set; }
         public SolidColorBrush StatusColor
         {

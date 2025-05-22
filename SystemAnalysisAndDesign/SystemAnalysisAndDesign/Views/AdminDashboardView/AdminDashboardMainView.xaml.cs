@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using SystemAnalysisAndDesign.ViewModels.SignInandRegisterViewModel;
+using SystemAnalysisAndDesign.Views.AdminCarRentView;
+using SystemAnalysisAndDesign.Views.PaymentView;
 
 namespace SystemAnalysisAndDesign.Views.AdminDashboardView
 {
@@ -22,6 +25,12 @@ namespace SystemAnalysisAndDesign.Views.AdminDashboardView
         public AdminDashboardMainView()
         {
             InitializeComponent();
+        }
+        private void btn_CarRentList(object sender, RoutedEventArgs e)
+        {
+            AdminCarRentMainView adminCarRentMainView = new AdminCarRentMainView();
+            adminCarRentMainView.Show();
+            this.Close();
         }
     }
 }

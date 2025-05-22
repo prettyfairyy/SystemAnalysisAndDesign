@@ -66,7 +66,7 @@
                                     Width="100"
                                     Height="30"
                                     HorizontalAlignment="Center"
-                                    Style="{StaticResource PrimaryButtonStyle}"/>       
+                                    Style="{StaticResource PrimaryButtonStyle}" Click="btn_RentCarMainWindow"/>       
 
                         </StackPanel>
                     </Border>
@@ -93,7 +93,7 @@
                                 Width="100"
                                 Height="30"
                                 HorizontalAlignment="Center"
-                                Style="{StaticResource PrimaryButtonStyle}"/>       
+                                Style="{StaticResource PrimaryButtonStyle}" Click="btn_RentCarMainWindow"/>       
                         </StackPanel>
                     </Border>
                 </UniformGrid>

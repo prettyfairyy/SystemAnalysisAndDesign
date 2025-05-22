@@ -30,5 +30,6 @@ namespace SystemAnalysisAndDesign.Views.CategoryCarRentView
             _context = new RentalDbContext();
             this.DataContext = new FilterOptionViewModel(_context); 
         }
+
     }
 }

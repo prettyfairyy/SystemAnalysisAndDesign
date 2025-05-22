@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using SystemAnalysisAndDesign.Models;
 using SystemAnalysisAndDesign.ViewModels.AdminCarRentViewModel;
+using SystemAnalysisAndDesign.ViewModels.SignInandRegisterViewModel;
+using SystemAnalysisAndDesign.Views.PaymentView;
 
 namespace SystemAnalysisAndDesign.Views.AdminCarRentView
 {
@@ -30,9 +32,11 @@ namespace SystemAnalysisAndDesign.Views.AdminCarRentView
             this.DataContext = new AdminCarListViewModel(_context);
         }
 
-        private void AdminCarListView_Loaded(object sender, RoutedEventArgs e)
+        private void btn_AddCar(object sender, RoutedEventArgs e)
         {
-
+            AdminCarRentAddMainView adminCarRentAddMainView = new AdminCarRentAddMainView();
+            adminCarRentAddMainView.Show();
+            this.Close();
         }
     }
 }

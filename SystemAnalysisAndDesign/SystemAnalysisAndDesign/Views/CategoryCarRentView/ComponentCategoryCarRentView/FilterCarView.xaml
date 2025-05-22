@@ -52,7 +52,12 @@
                            FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Margin="10 5"/>
 
                                 <!-- Button -->
-                                <Button Content="Rent Now" Style="{StaticResource PrimaryButtonStyle}" Width="100"/>
+                                <Button Content="Rent Now"
+                                        Style="{StaticResource PrimaryButtonStyle}" 
+                                        Width="100"
+                                        Command="{Binding DataContext.RentCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}" /> 
+
                             </StackPanel>
                         </StackPanel>
                     </Border>
