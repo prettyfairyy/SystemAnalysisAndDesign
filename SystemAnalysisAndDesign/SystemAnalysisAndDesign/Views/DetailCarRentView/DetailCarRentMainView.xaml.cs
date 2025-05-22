@@ -11,6 +11,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using SystemAnalysisAndDesign.Models.Entities;
+using SystemAnalysisAndDesign.ViewModels.CategoryCarRentViewModel;
+using SystemAnalysisAndDesign.ViewModels.DetailCarRentViewModel;
+using SystemAnalysisAndDesign.ViewModels.PaymentViewModel;
+using SystemAnalysisAndDesign.Views.CategoryCarRentView.ComponentCategoryCarRentView;
+using SystemAnalysisAndDesign.Views.PaymentView;
 
 namespace SystemAnalysisAndDesign.Views.DetailCarRentView
 {
@@ -19,9 +25,32 @@ namespace SystemAnalysisAndDesign.Views.DetailCarRentView
     /// </summary>
     public partial class DetailCarRentMainView : Window
     {
-        public DetailCarRentMainView()
+        /*public DetailCarRentMainView(Car detailCar, FilterOptionViewModel filterVM)
         {
             InitializeComponent();
+            // Gán filterVM vào resource của view
+            Resources["FilterOptionVM"] = filterVM;
+            DataContext = new DetailCarViewModel(detailCar);
+        }*/
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Quay lại trang CategoryCarRentMainView
+            var categoryView = new CategoryCarRentView.CategoryCarRentMainView();
+            categoryView.Show();
+            this.Close();
         }
+
+        //public DetailCarRentMainView() : this(new Car()) { }
+        public DetailCarRentMainView(Car detailCar, FilterOptionViewModel filterVM)
+        {
+            InitializeComponent();
+
+            FilterOptionView.DataContext = filterVM;
+            FilterOptionView.IsEnabled = false;
+
+            DataContext = new DetailCarViewModel(detailCar);
+        }
+
     }
 }

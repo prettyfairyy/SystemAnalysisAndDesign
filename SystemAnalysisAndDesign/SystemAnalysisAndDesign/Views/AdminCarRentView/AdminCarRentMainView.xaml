@@ -165,7 +165,7 @@
                         <Border Grid.Column="2" Width="35" Height="35" CornerRadius="17.5"
                                 Margin="20,10" Background="#3A63F1" HorizontalAlignment="Right">
                             <Button Background="Transparent" BorderThickness="0" ToolTip="Add new car"
-                                    Width="24" Height="24" Padding="0">
+                                    Width="24" Height="24" Padding="0" Click="btn_AddCar">
                                 <materialDesign:PackIcon Kind="AddBold" Width="22" Height="22"
                                                          Foreground="White" FontWeight="Bold"/>
                             </Button>

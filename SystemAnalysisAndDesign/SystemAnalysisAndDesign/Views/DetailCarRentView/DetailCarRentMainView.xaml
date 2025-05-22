@@ -6,6 +6,9 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:SystemAnalysisAndDesign.Views.DetailCarRentView"
         xmlns:components="clr-namespace:SystemAnalysisAndDesign.Views.Share"
+        xmlns:detailcar="clr-namespace:SystemAnalysisAndDesign.Views.DetailCarRentView.ComponentDetailCarRentView"
+        xmlns:filteroption="clr-namespace:SystemAnalysisAndDesign.Views.CategoryCarRentView.ComponentCategoryCarRentView"
+        xmlns:filtervm="clr-namespace:SystemAnalysisAndDesign.ViewModels.CategoryCarRentViewModel"
         mc:Ignorable="d"
         Title="DetailCarRentMainView" Height="auto" Width="1280" Background="#EFF3FD">
     <Grid>
@@ -29,29 +32,14 @@
                     </Grid.ColumnDefinitions>
 
                     <!-- Sidebar Filters -->
-                    <StackPanel Grid.Column="0" Background="White" Margin="0 10 20 10">
-                        <TextBlock Text="TYPE" FontWeight="Bold" Margin="20 20 0 10"/>
-                        <CheckBox Content="Sport (10)" IsChecked="True" Margin="20 0"/>
-                        <CheckBox Content="SUV (12)" IsChecked="True" Margin="20 0"/>
-                        <CheckBox Content="MPV (16)" Margin="20 0"/>
-                        <CheckBox Content="Sedan (20)" Margin="20 0"/>
-                        <CheckBox Content="Coupe (14)" Margin="20 0"/>
-                        <CheckBox Content="Hatchback (14)" Margin="20 0"/>
-
-                        <TextBlock Text="CAPACITY" FontWeight="Bold" Margin="20 20 0 10"/>
-                        <CheckBox Content="2 Person (10)" IsChecked="True" Margin="20 0"/>
-                        <CheckBox Content="4 Person (14)" Margin="20 0"/>
-                        <CheckBox Content="6 Person (12)" Margin="20 0"/>
-                        <CheckBox Content="8 or More (16)" Margin="20 0"/>
-
-                        <TextBlock Text="PRICE" FontWeight="Bold" Margin="20 20 0 10"/>
-                        <Slider Minimum="0" Maximum="100" Value="80" Margin="20 0 20 0"/>
-                        <TextBlock Text="Max. $100.00" Margin="20 5"/>
-                    </StackPanel>
+                    <filteroption:FilterOptionView x:Name="FilterOptionView" Grid.Column="0" IsEnabled="False" />
 
                     <!-- Main Content -->
-
                     <StackPanel Grid.Column="1" Margin="0 10 20 10">
+                        <Button Style="{StaticResource PrimaryButtonStyle}" Width="40" Height="40" Margin="20 10" Padding="0" BorderThickness="0" Click="BackButton_Click"
+                                HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <materialDesign:PackIcon Kind="ArrowLeftBold" Foreground="White" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Button>
 
                         <!-- Top Car Section -->
                         <Grid Margin="0 0 0 0">
@@ -67,72 +55,27 @@
                                        FontWeight="Bold" FontSize="24" TextWrapping="Wrap"/>
                                     <TextBlock Text="Safety and comfort while driving a futuristic and elegant sports car"
                                        Margin="0 10 0 10" TextWrapping="Wrap" FontSize="14"/>
-                                    <!--<Image Source="/Image/nissan.png" Height="120" Stretch="Uniform" />
-                                <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
-                                    <Image Source="/Image/thumb1.png" Width="60" Margin="0 0 10 0"/>
-                                    <Image Source="/Image/thumb2.png" Width="60" Margin="0 0 10 0"/>
-                                    <Image Source="/Image/thumb3.png" Width="60"/>
-                                </StackPanel>-->
+                                    <Image Source="{Binding SelectedCar.ImagePath}" Height="100" Width="300" Stretch="Uniform" />
                                 </StackPanel>
                             </Border>
 
-                            <!-- Right: Car Info -->
+                            <!-- Right: Car Info (Centered DetailCarView) -->
                             <Border Grid.Column="1" Background="White" CornerRadius="10">
-                                <StackPanel Margin="20">
-                                    <TextBlock  Text="Nissan GT – R" FontWeight="Bold" FontSize="24"/>
-                                    <TextBlock Text="★★★★☆  440+ Reviewer" Foreground="Orange" Margin="0 5"/>
-                                    <TextBlock Text="NISMO has become the embodiment of Nissan’s outstanding performance..."
-                                       TextWrapping="Wrap" Margin="0 10 0 10" Foreground="gray" FontSize="14"/>
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
-
-                                        <StackPanel Grid.Column="0">
-                                            <Grid Grid.Column="0">
-                                                <TextBlock Text="Type Car: " Foreground="gray" HorizontalAlignment="Left" FontSize="14"/>
-                                                <TextBlock Text="Sport" Foreground="gray" HorizontalAlignment="Right" FontWeight="Bold" FontSize="14" Margin="0,0,10,0"/>
-                                            </Grid>
-                                            <Grid>
-                                                <TextBlock Text="Capacity: " Foreground="gray" HorizontalAlignment="Left" FontSize="14"/>
-                                                <TextBlock Text="2 Person" Foreground="gray" HorizontalAlignment="Right" FontWeight="Bold" FontSize="14" Margin="0,0,10,0"/>
-                                            </Grid>
-                                        </StackPanel>
-
-                                        <StackPanel Grid.Column="1">
-                                            <Grid Grid.Column="0">
-                                                <TextBlock Text="Steering:" Foreground="gray" HorizontalAlignment="Left" FontSize="14" Margin="10,0,0,0"/>
-                                                <TextBlock Text="Manual" Foreground="gray" HorizontalAlignment="Right" FontWeight="Bold" FontSize="14" Margin="0,0,20,0"/>
-                                            </Grid>
-                                            <Grid>
-                                                <TextBlock Text="Gasoline: " Foreground="gray" HorizontalAlignment="Left" FontSize="14" Margin="10,0,0,0"/>
-                                                <TextBlock Text="70L" Foreground="gray" HorizontalAlignment="Right" FontWeight="Bold" FontSize="14" Margin="0,0,20,0"/>
-                                            </Grid>
-                                        </StackPanel>
-
-                                    </Grid>
-
-                                    <StackPanel Orientation="Horizontal" Margin="0 10 10 0">
-                                        <TextBlock Text="$80.00/day  " FontWeight="Bold" FontSize="16" Foreground="#3A63F1" VerticalAlignment="Center"/>
-                                        <TextBlock Text="  $100.00" TextDecorations="Strikethrough" VerticalAlignment="Center" Foreground="gray"/>
-                                    </StackPanel>
-                                    <Button Content="Rent Now" Width="90" Margin="0 10 0 0" Background="#3A63F1" Foreground="White" Padding="4" BorderThickness="0" FontSize="14"/>
-                                </StackPanel>
+                                <Grid>
+                                    <detailcar:DetailCarView 
+                                                DataContext="{Binding SelectedCar}"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"/>
+                                </Grid>
                             </Border>
+
                         </Grid>
 
                         <!-- Reviews -->
                         <Border Background="White" CornerRadius="10" Margin="0 20 0 10">
                             <StackPanel Margin="20">
                                 <TextBlock Text="Reviews (13)" FontWeight="Bold" FontSize="24"/>
-                                <!-- Review 1 -->
                                 <StackPanel Orientation="Horizontal" Margin="0 10 0 10">
-                                    <!--<Ellipse Width="40" Height="40" Margin="0 0 10 0">
-                                    <Ellipse.Fill>
-                                        <ImageBrush ImageSource="/Image/user1.jpg"/>
-                                    </Ellipse.Fill>
-                                </Ellipse>-->
                                     <StackPanel>
                                         <TextBlock Text="Alex Stanton" FontWeight="Bold" FontSize="14" Foreground="Gray"/>
                                         <TextBlock Text="CEO at Bukalapak"/>
@@ -141,13 +84,7 @@
                                     </StackPanel>
                                 </StackPanel>
 
-                                <!-- Review 2 -->
                                 <StackPanel Orientation="Horizontal" Margin="0 10 0 10">
-                                    <!--<Ellipse Width="40" Height="40" Margin="0 0 10 0">
-                                    <Ellipse.Fill>
-                                        <ImageBrush ImageSource="/Image/user2.jpg"/>
-                                    </Ellipse.Fill>
-                                </Ellipse>-->
                                     <StackPanel>
                                         <TextBlock Text="Skylar Dias" FontWeight="Bold" FontSize="14" Foreground="Gray"/>
                                         <TextBlock Text="CEO at Amazon"/>
@@ -164,26 +101,9 @@
                             </StackPanel>
                         </Border>
 
-                        <!-- Recent Car (you can replace with ItemsControl later) -->
+                        <!-- Recent Car -->
                         <TextBlock Text="Recent Car" FontWeight="Bold" FontSize="24" Margin="0 10 0 0"/>
-                        <WrapPanel>
-                            <!-- Example Car Card -->
-                            <Border Background="White" CornerRadius="10" Width="250" Margin="10 10 10 0">
-                                <StackPanel Margin="10">
-                                    <!--<Image Source="/Image/koenigsegg.png" Height="100"/>-->
-                                    <TextBlock Text="Koenigsegg" FontWeight="Bold" FontSize="14"/>
-                                    <TextBlock Text="Sport" Foreground="Gray"/>
-                                    <StackPanel Orientation="Horizontal" Margin="0 5 0 5">
-                                        <TextBlock Text="90L" Margin="0 0 10 0"/>
-                                        <TextBlock Text="Manual" Margin="0 0 10 0"/>
-                                        <TextBlock Text="2 People"/>
-                                    </StackPanel>
-                                    <TextBlock Text="$99.00 / day" FontWeight="Bold" Foreground="#3A63F1"/>
-                                    <Button Content="Rent Now" Background="#3A63F1" Foreground="White" Margin="0 5 0 0" Width="90" BorderThickness="0" Padding="4"/>
-                                </StackPanel>
-                            </Border>
-                            <!-- Thêm nhiều card tương tự -->
-                        </WrapPanel>
+                        <filteroption:FilterCarView DataContext="{Binding Source={x:Reference FilterOptionView}, Path=DataContext}" />
                     </StackPanel>
                 </Grid>
                 <components:Footer/>

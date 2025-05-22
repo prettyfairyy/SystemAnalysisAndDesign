@@ -5,9 +5,11 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using SystemAnalysisAndDesign.Models;
 using SystemAnalysisAndDesign.Models.DTOs;
 using SystemAnalysisAndDesign.Models.Entities;
+using SystemAnalysisAndDesign.Views.DetailCarRentView;
 
 namespace SystemAnalysisAndDesign.ViewModels.CategoryCarRentViewModel
 {
@@ -34,12 +36,12 @@ namespace SystemAnalysisAndDesign.ViewModels.CategoryCarRentViewModel
             }
         }
 
-        public FilterOptionViewModel(RentalDbContext context)
-        {
-            _context = context;
+        //public FilterOptionViewModel(RentalDbContext context)
+        //{
+            //_context = context;
 
-            LoadDataFromDatabase();
-        }
+            //LoadDataFromDatabase();
+        //}
 
         private void LoadDataFromDatabase()
         {
@@ -95,5 +97,21 @@ namespace SystemAnalysisAndDesign.ViewModels.CategoryCarRentViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        public ICommand RentCommand { get; }
+
+        public FilterOptionViewModel(RentalDbContext context)
+        {
+            _context = context;
+
+            RentCommand = new RelayCommand<Car>(car =>
+            {
+                if (car == null) return;
+                var detailView = new DetailCarRentMainView(car, this);
+                detailView.Show();
+            });
+
+            LoadDataFromDatabase();
+        }
+
     }
 }
