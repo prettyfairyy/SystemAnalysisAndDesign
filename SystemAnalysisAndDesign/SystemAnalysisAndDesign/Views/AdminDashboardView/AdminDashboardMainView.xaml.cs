@@ -14,6 +14,8 @@ using System.Windows.Shapes;
 using SystemAnalysisAndDesign.ViewModels.SignInandRegisterViewModel;
 using SystemAnalysisAndDesign.Views.AdminCarRentView;
 using SystemAnalysisAndDesign.Views.PaymentView;
+using LiveCharts;
+using LiveCharts.Wpf;
 
 namespace SystemAnalysisAndDesign.Views.AdminDashboardView
 {
@@ -25,12 +27,30 @@ namespace SystemAnalysisAndDesign.Views.AdminDashboardView
         public AdminDashboardMainView()
         {
             InitializeComponent();
+            DataContext = this;
+            
+            // PointLabel = chartPoint =>
+            //     string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
+            PointLabel = chartPoint => chartPoint.Y.ToString();
         }
         private void btn_CarRentList(object sender, RoutedEventArgs e)
         {
             AdminCarRentMainView adminCarRentMainView = new AdminCarRentMainView();
             adminCarRentMainView.Show();
             this.Close();
+        }
+        public Func<ChartPoint, string> PointLabel { get; set; }
+
+        private void Chart_OnDataClick(object sender, ChartPoint chartpoint)
+        {
+            var chart = (LiveCharts.Wpf.PieChart)chartpoint.ChartView;
+
+            //clear selected slice.
+            foreach (PieSeries series in chart.Series)
+                series.PushOut = 0;
+
+            var selectedSeries = (PieSeries)chartpoint.SeriesView;
+            selectedSeries.PushOut = 8;
         }
     }
 }

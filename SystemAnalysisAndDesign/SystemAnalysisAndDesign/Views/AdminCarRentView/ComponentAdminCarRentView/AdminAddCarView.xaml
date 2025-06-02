@@ -76,16 +76,27 @@
                 <StackPanel Grid.Row="3" Orientation="Horizontal">
                     <StackPanel Margin="10,5">
                         <TextBlock Text="Car Image" Margin="15,0"/>
-                        <Button Content="Upload Image" Foreground="Gray" Height="250" Width="400"
-                                Background="#EFF3FD" Margin="0,5">
+                        <Button Name="btnUpload" Content="Upload Image" Foreground="Black" Height="35" Width="200"
+                                Background="#EFF3FD" Margin="0,5" Click="btnUpload_Click">
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
-                                    <Border Background="{TemplateBinding Background}" CornerRadius="15">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="#E0E0E0" BorderThickness="1" CornerRadius="15">
                                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                     </Border>
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>
+                        <Border Width="400"
+                                Height="250"
+                                Margin="10,10,10,10"
+                                BorderBrush="#E0E0E0"
+                                BorderThickness="1"
+                                CornerRadius="15"
+                                Background="#EFF3FD">
+                            <Image Name="imgDisplay"
+                                   Stretch="Uniform"
+                            />
+                        </Border>
                     </StackPanel>
                     <StackPanel Margin="10,5">
                         <TextBlock Text="Description" Margin="15,0"/>

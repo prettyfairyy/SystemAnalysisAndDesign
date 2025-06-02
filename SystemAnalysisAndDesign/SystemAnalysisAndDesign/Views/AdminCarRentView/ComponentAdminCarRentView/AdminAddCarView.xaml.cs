@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace SystemAnalysisAndDesign.Views.AdminCarRentView.ComponentAdminCarRentView
 {
@@ -23,6 +24,20 @@ namespace SystemAnalysisAndDesign.Views.AdminCarRentView.ComponentAdminCarRentVi
         public AdminAddCarView()
         {
             InitializeComponent();
+        }
+        
+        private void btnUpload_Click(object sender, RoutedEventArgs e)
+        {
+            // Mở hộp thoại chọn file ảnh :3
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.png;*.jpg;*.jpeg;*.bmp)|*.png;*.jpg;*.jpeg;*.bmp";
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                // Hiển thị ảnh lên imgDisplay :3
+                BitmapImage bitmap = new BitmapImage(new Uri(openFileDialog.FileName));
+                imgDisplay.Source = bitmap;
+            }
         }
     }
 }

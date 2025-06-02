@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:components="clr-namespace:SystemAnalysisAndDesign.Views.Share"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         xmlns:local="clr-namespace:SystemAnalysisAndDesign.Views.AdminDashboardView"
         mc:Ignorable="d"
         Title="AdminDashboardMainView" Height="760" Width="1280" Background="#EFF3FD">
@@ -145,9 +146,10 @@
                     <Border Grid.Column="0" Background="White" CornerRadius="10" Padding="20" Margin="0 0 20 0">
                         <StackPanel>
                             <TextBlock Text="Details Rental" FontWeight="Bold" FontSize="18" Margin="0 0 0 10"/>
-                            <Border Background="#EFF3FD" CornerRadius="10" Height="150" Margin="0 0 0 10"/>
+                            <Border Background="#EFF3FD" CornerRadius="10" Height="200" Margin="0 0 0 10">
+                                <Image Source="/Image/Maps.png" Stretch="UniformToFill"/>
+                            </Border>
                             <StackPanel Orientation="Horizontal" Margin="0 10">
-                                <!--<Image Source="/Image/nissan.png" Width="100" Height="60" Margin="0 0 10 0"/>-->
                                 <StackPanel>
                                     <TextBlock Text="Nissan GT – R" FontWeight="Bold"/>
                                     <TextBlock Text="Sport Car" Foreground="Gray"/>
@@ -192,9 +194,20 @@
                         <StackPanel>
                             <TextBlock Text="Top 5 Car Rental" FontWeight="Bold" FontSize="16" Margin="0 0 0 10"/>
                             <!-- Placeholder Pie Chart -->
-                            <Ellipse Width="140" Height="140" Fill="#E0E0E0" HorizontalAlignment="Center"/>
-                            <TextBlock Text="72,030" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center"/>
-                            <TextBlock Text="Rental Car" HorizontalAlignment="Center" Foreground="Gray"/>
+                            <lvc:PieChart Width="300" Height="300" LegendLocation="Bottom" Hoverable="False" DataTooltip="{x:Null}">
+                                <lvc:PieChart.Series>
+                                    <lvc:PieSeries Title="Sport Car" Values="17439" DataLabels="False"
+                                                   LabelPoint="{Binding PointLabel}" Fill="#DA6C6C"/>
+                                    <lvc:PieSeries Title="SUV" Values="9478" DataLabels="False" 
+                                                   LabelPoint="{Binding PointLabel}" Fill="#9EC6F3"/>
+                                    <lvc:PieSeries Title="Coupe" Values="19197" DataLabels="False" 
+                                                   LabelPoint="{Binding PointLabel}" Fill="#BBD8A3"/>
+                                    <lvc:PieSeries Title="Hatchback" Values="12510" DataLabels="False" 
+                                                   LabelPoint="{Binding PointLabel}" Fill="#E6B2BA"/>
+                                    <lvc:PieSeries Title="MPV" Values="14406" DataLabels="False" 
+                                                   LabelPoint="{Binding PointLabel}" Fill="#FFB38E "/>
+                                </lvc:PieChart.Series>
+                            </lvc:PieChart>
 
                             <!-- Legend -->
                             <StackPanel Margin="10 0 0 10">

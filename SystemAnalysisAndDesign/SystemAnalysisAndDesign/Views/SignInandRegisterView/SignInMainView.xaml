@@ -17,8 +17,8 @@
         <Border Grid.Column="0" Grid.ColumnSpan="2">
             <Border Margin="20" CornerRadius="20" Background="Gray">
                 <Grid>
-                    <!-- <Image Source="/Resources/car_image.jpg" Stretch="UniformToFill"/> -->
-                    <TextBlock Text="lorem islum abc xyz" VerticalAlignment="Bottom" Margin="20" 
+                    <Image Source="/Image/carbg.jpg" Stretch="UniformToFill" Opacity="0.5"/>
+                    <TextBlock Text="Choose your own car to rent now!" VerticalAlignment="Bottom" Margin="20" 
                            Foreground="White" FontSize="24" FontWeight="SemiBold"/>
                 </Grid>
             </Border>

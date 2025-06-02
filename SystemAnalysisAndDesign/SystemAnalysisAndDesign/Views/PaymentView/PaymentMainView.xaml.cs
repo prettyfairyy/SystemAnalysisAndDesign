@@ -34,6 +34,13 @@ namespace SystemAnalysisAndDesign.Views.PaymentView
             dpPickupDate.SelectedDate = DateTime.Today.AddDays(1);
             dpDropoffDate.SelectedDate = DateTime.Today.AddDays(3);
         }
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Quay lại trang MainWindowMainView
+            var categoryView = new CategoryCarRentView.CategoryCarRentMainView();
+            categoryView.Show();
+            this.Close();
+        }
 
         private void SetupEventHandlers()
         {
