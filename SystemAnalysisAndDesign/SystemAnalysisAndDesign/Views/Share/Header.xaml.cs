@@ -29,5 +29,23 @@ namespace SystemAnalysisAndDesign.Views.Share
         {
 
         }
+        
+        private void SettingIcon_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            SettingsPopup.IsOpen = !SettingsPopup.IsOpen;
+        }
+        
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            // Quay lại trang CategoryCarRentMainView
+            Window parentWindow = Window.GetWindow(this);
+
+            // Mở cửa sổ MainWindowMainView
+            var mainWindow = new MainWindowView.MainWindowMainView();
+            mainWindow.Show();
+
+            // Đóng cửa sổ hiện tại
+            parentWindow?.Close();
+        }
     }
 }

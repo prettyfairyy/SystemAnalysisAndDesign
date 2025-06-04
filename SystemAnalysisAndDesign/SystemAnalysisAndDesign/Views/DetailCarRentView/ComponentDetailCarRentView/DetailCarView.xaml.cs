@@ -1,18 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using SystemAnalysisAndDesign.Models.Entities;
+using SystemAnalysisAndDesign.ViewModels.Stores;
 using SystemAnalysisAndDesign.ViewModels.DetailCarRentViewModel;
 using SystemAnalysisAndDesign.ViewModels.PaymentViewModel;
 using SystemAnalysisAndDesign.Views.PaymentView;
@@ -28,19 +21,27 @@ namespace SystemAnalysisAndDesign.Views.DetailCarRentView.ComponentDetailCarRent
         {
             InitializeComponent();
         }
+
         private void RentNowButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is Car selectedCar)
             {
-                // Gán vào store dùng chung
                 SelectedCarStore.SelectedCar = selectedCar;
 
-                // Điều hướng sang màn hình thanh toán
-                PaymentMainView paymentWindow = new PaymentMainView();
+                //Truyền Customer đang đăng nhập
+                var loggedInCustomer = LoginStore.CurrentCustomer;  // bạn phải đảm bảo không null
+                if (loggedInCustomer == null)
+                {
+                    MessageBox.Show("Không tìm thấy thông tin người dùng. Vui lòng đăng nhập lại.");
+                    return;
+                }
+
+                var paymentWindow = new PaymentMainView();
                 paymentWindow.Show();
                 Window.GetWindow(this)?.Close();
             }
         }
+
 
     }
 }

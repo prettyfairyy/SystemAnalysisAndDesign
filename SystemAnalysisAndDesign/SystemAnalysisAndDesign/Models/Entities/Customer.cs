@@ -19,5 +19,25 @@ namespace SystemAnalysisAndDesign.Models.Entities
         public DateTime? DateOfBirth { get; set; }
 
         public ICollection<Rental> Rentals { get; set; }
+
+        public string Town
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(Address)) return "";
+                var parts = Address.Split(',');
+                return parts.Length > 0 ? parts[^1].Trim() : "";
+            }
+        }
+
+        public string FullAddress
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(Address)) return "";
+                var parts = Address.Split(',');
+                return parts.Length > 1 ? string.Join(",", parts.Take(parts.Length - 1)).Trim() : Address;
+            }
+        }
     }
 }

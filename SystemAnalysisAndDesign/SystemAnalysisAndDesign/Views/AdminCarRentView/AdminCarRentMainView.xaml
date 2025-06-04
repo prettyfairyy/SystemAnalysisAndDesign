@@ -177,7 +177,6 @@
                 <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="auto">
                     <carlist:AdminCarListView />
                 </ScrollViewer>
-
             </Grid>
         </Grid>
     </Grid>

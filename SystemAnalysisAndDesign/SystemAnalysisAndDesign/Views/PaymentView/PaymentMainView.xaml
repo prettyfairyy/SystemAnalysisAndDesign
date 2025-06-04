@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:components="clr-namespace:SystemAnalysisAndDesign.Views.Share"
         xmlns:local="clr-namespace:SystemAnalysisAndDesign.Views.PaymentView"
         xmlns:rentalsum="clr-namespace:SystemAnalysisAndDesign.Views.PaymentView.ComponentPaymentView"
@@ -19,400 +20,138 @@
 
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
             <StackPanel>
-                    <Grid Margin="10 10" Grid.RowSpan="2">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0.7*"/>
-                            <ColumnDefinition Width="0.3*"/>
-                        </Grid.ColumnDefinitions>
-                        <!-- Thay đổi ScrollViewer để không có margin âm -->
-                        <Grid Grid.Column="0" Margin="10 0 10 0" Background="White">
-                            <Grid.RowDefinitions >
-                                <RowDefinition Height="Auto" />
-                                <!-- Card -->
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
+                <Grid Margin="10 10" Grid.RowSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.7*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- Thay đổi ScrollViewer để không có margin âm -->
+                    <Grid Grid.Column="0" Margin="10 0 10 0" Background="White">
+                        <Grid.RowDefinitions >
+                            <RowDefinition Height="Auto" />
+                            <!-- Card -->
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
 
-                            <StackPanel Grid.Row="0" Margin="40,30,40,30" Background="White">
-                                <!-- Billing Info Section -->
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Row="0" Margin="40,30,40,30" Background="White">
+                            <Button Style="{StaticResource PrimaryButtonStyle}" Width="40" Height="40" Click="BackButton_Click"
+                                        HorizontalAlignment="Left" VerticalAlignment="Center">
+                                <materialDesign:PackIcon Kind="ArrowLeftBold" Foreground="White" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Button>
+                            <!-- Billing Info Section -->
+                            <rentalsum:BillingInfoView/>
 
-                                    <StackPanel Grid.Column="0">
-                                        <TextBlock Text="Billing Info" FontSize="24" FontWeight="Bold"/>
-                                        <TextBlock Text="Please enter your billing info" Foreground="#90A3BF" Margin="0,5,0,20"/>
-                                    </StackPanel>
+                            <!-- Rental Info Section -->
+                            <ContentControl x:Name="RentalInfoViewControl" />
 
-                                    <TextBlock Grid.Column="1" Text="Step 1 of 4" Foreground="#90A3BF" VerticalAlignment="Top"/>
-                                </Grid>
 
-                                <!-- Name and Phone Number -->
-                                <Grid Margin="0,0,0,15">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
+                            <!-- Thêm separator để tạo khoảng cách rõ ràng trước Payment Method -->
+                            <Separator Background="#E0E0E0" Margin="0,10,0,30"/>
 
-                                    <StackPanel Grid.Column="0" Margin="0,0,10,0">
-                                        <TextBlock Text="Name" Margin="0,0,0,8"/>
-                                        <Border Background="#F6F7F9" CornerRadius="10">
-                                            <TextBox x:Name="txtName" Text="" BorderThickness="0" Background="Transparent"
-                                     Height="45" Padding="15,0" VerticalContentAlignment="Center"
-                                     FontSize="14" Foreground="#596780" Margin="2"
-                                     GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"
-                                     Tag="Your name"/>
-                                        </Border>
-                                    </StackPanel>
+                            <!-- Payment Method Section - Thêm padding phía trên để tránh bị cắt -->
+                            <Grid Margin="0,20,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
 
-                                    <StackPanel Grid.Column="1" Margin="10,0,0,0">
-                                        <TextBlock Text="Phone Number" Margin="0,0,0,8"/>
-                                        <Border Background="#F6F7F9" CornerRadius="10">
-                                            <TextBox x:Name="txtPhoneNumber" Text="" BorderThickness="0" Background="Transparent"
-                                     Height="45" Padding="15,0" VerticalContentAlignment="Center"
-                                     FontSize="14" Foreground="#596780" Margin="2"
-                                     GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"
-                                     Tag="Phone number"/>
-                                        </Border>
-                                    </StackPanel>
-                                </Grid>
-
-                                <!-- Address and Town/City -->
-                                <Grid Margin="0,0,0,30">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-
-                                    <StackPanel Grid.Column="0" Margin="0,0,10,0">
-                                        <TextBlock Text="Address" Margin="0,0,0,8"/>
-                                        <Border Background="#F6F7F9" CornerRadius="10">
-                                            <TextBox x:Name="txtAddress" Text="" BorderThickness="0" Background="Transparent"
-                                     Height="45" Padding="15,0" VerticalContentAlignment="Center"
-                                     FontSize="14" Foreground="#596780" Margin="2"
-                                     GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"
-                                     Tag="Address"/>
-                                        </Border>
-                                    </StackPanel>
-
-                                    <StackPanel Grid.Column="1" Margin="10,0,0,0">
-                                        <TextBlock Text="Town / City" Margin="0,0,0,8"/>
-                                        <Border Background="#F6F7F9" CornerRadius="10">
-                                            <TextBox x:Name="txtCity" Text="" BorderThickness="0" Background="Transparent"
-                                     Height="45" Padding="15,0" VerticalContentAlignment="Center"
-                                     FontSize="14" Foreground="#596780" Margin="2"
-                                     GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"
-                                     Tag="Town or city"/>
-                                        </Border>
-                                    </StackPanel>
-                                </Grid>
-
-                                <!-- Rental Info Section -->
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-
-                                    <StackPanel Grid.Column="0">
-                                        <TextBlock Text="Rental Info" FontSize="24" FontWeight="Bold"/>
-                                        <TextBlock Text="Please select your rental date" Foreground="#90A3BF" Margin="0,5,0,20"/>
-                                    </StackPanel>
-
-                                    <TextBlock Grid.Column="1" Text="Step 2 of 4" Foreground="#90A3BF" VerticalAlignment="Top"/>
-                                </Grid>
-
-                                <!-- Pick-Up Section -->
-                                <StackPanel Margin="0,0,0,15">
-                                    <Grid Margin="0,0,0,10">
-                                        <RadioButton x:Name="rbPickUp" Content="Pick - Up" IsChecked="True" 
-                                    FontSize="14" FontWeight="SemiBold"/>
-                                    </Grid>
-
-                                    <!-- Locations and Date -->
-                                    <Grid Margin="0,0,0,10">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
-
-                                        <StackPanel Grid.Column="0" Margin="0,0,10,0">
-                                            <TextBlock Text="Locations" Margin="0,0,0,8"/>
-                                            <Border Background="#F6F7F9" CornerRadius="10">
-                                                <ComboBox x:Name="cmbPickupLocation" BorderThickness="0" Background="Transparent"
-                                         Height="45" Padding="10,0" VerticalContentAlignment="Center"
-                                         FontSize="14" Foreground="#596780">
-                                                    <ComboBoxItem Content="Select your city" IsSelected="True"/>
-                                                    <ComboBoxItem Content="Hà Nội"/>
-                                                    <ComboBoxItem Content="Hồ Chí Minh"/>
-                                                    <ComboBoxItem Content="Đà Nẵng"/>
-                                                </ComboBox>
-                                            </Border>
-                                        </StackPanel>
-
-                                        <StackPanel Grid.Column="1" Margin="10,0,0,0">
-                                            <TextBlock Text="Date" Margin="0,0,0,8"/>
-                                            <Border Background="#F6F7F9" CornerRadius="10">
-                                                <DatePicker x:Name="dpPickupDate" BorderThickness="0" Background="Transparent"
-                                           Height="45" Padding="10,0" VerticalContentAlignment="Center"
-                                           FontSize="14" Foreground="#596780"/>
-                                            </Border>
-                                        </StackPanel>
-                                    </Grid>
-
-                                    <!-- Time -->
-                                    <StackPanel>
-                                        <TextBlock Text="Time" Margin="0,0,0,8"/>
-                                        <Border Background="#F6F7F9" CornerRadius="10">
-                                            <ComboBox x:Name="cmbPickupTime" BorderThickness="0" Background="Transparent"
-                                     Height="45" Padding="10,0" VerticalContentAlignment="Center"
-                                     FontSize="14" Foreground="#596780">
-                                                <ComboBoxItem Content="Select your time" IsSelected="True"/>
-                                                <ComboBoxItem Content="08:00"/>
-                                                <ComboBoxItem Content="09:00"/>
-                                                <ComboBoxItem Content="10:00"/>
-                                                <ComboBoxItem Content="11:00"/>
-                                                <ComboBoxItem Content="12:00"/>
-                                                <ComboBoxItem Content="13:00"/>
-                                                <ComboBoxItem Content="14:00"/>
-                                                <ComboBoxItem Content="15:00"/>
-                                                <ComboBoxItem Content="16:00"/>
-                                                <ComboBoxItem Content="17:00"/>
-                                                <ComboBoxItem Content="18:00"/>
-                                            </ComboBox>
-                                        </Border>
-                                    </StackPanel>
+                                <StackPanel Grid.Column="0">
+                                    <TextBlock Text="Payment Method" FontSize="24" FontWeight="Bold"/>
+                                    <TextBlock Text="Please enter your payment method" Foreground="#90A3BF" Margin="0,5,0,20"/>
                                 </StackPanel>
 
-                                <!-- Drop-Off Section -->
-                                <StackPanel Margin="0,0,0,30">
-                                    <Grid Margin="0,0,0,10">
-                                        <RadioButton x:Name="rbDropOff" Content="Drop - Off" 
-                                    FontSize="14" FontWeight="SemiBold"/>
-                                    </Grid>
+                                <TextBlock Grid.Column="1" Text="Step 3 of 4" Foreground="#90A3BF" VerticalAlignment="Top"/>
+                            </Grid>
 
-                                    <!-- Locations and Date -->
-                                    <Grid Margin="0,0,0,10">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
-
-                                        <StackPanel Grid.Column="0" Margin="0,0,10,0">
-                                            <TextBlock Text="Locations" Margin="0,0,0,8"/>
-                                            <Border Background="#F6F7F9" CornerRadius="10">
-                                                <ComboBox x:Name="cmbDropoffLocation" BorderThickness="0" Background="Transparent"
-                                         Height="45" Padding="10,0" VerticalContentAlignment="Center"
-                                         FontSize="14" Foreground="#596780">
-                                                    <ComboBoxItem Content="Select your city" IsSelected="True"/>
-                                                    <ComboBoxItem Content="Hà Nội"/>
-                                                    <ComboBoxItem Content="Hồ Chí Minh"/>
-                                                    <ComboBoxItem Content="Đà Nẵng"/>
-                                                </ComboBox>
-                                            </Border>
-                                        </StackPanel>
-
-                                        <StackPanel Grid.Column="1" Margin="10,0,0,0">
-                                            <TextBlock Text="Date" Margin="0,0,0,8"/>
-                                            <Border Background="#F6F7F9" CornerRadius="10">
-                                                <DatePicker x:Name="dpDropoffDate" BorderThickness="0" Background="Transparent"
-                                           Height="45" Padding="10,0" VerticalContentAlignment="Center"
-                                           FontSize="14" Foreground="#596780"/>
-                                            </Border>
-                                        </StackPanel>
-                                    </Grid>
-
-                                    <!-- Time -->
-                                    <StackPanel>
-                                        <TextBlock Text="Time" Margin="0,0,0,8"/>
-                                        <Border Background="#F6F7F9" CornerRadius="10">
-                                            <ComboBox x:Name="cmbDropoffTime" BorderThickness="0" Background="Transparent"
-                                     Height="45" Padding="10,0" VerticalContentAlignment="Center"
-                                     FontSize="14" Foreground="#596780">
-                                                <ComboBoxItem Content="Select your time" IsSelected="True"/>
-                                                <ComboBoxItem Content="08:00"/>
-                                                <ComboBoxItem Content="09:00"/>
-                                                <ComboBoxItem Content="10:00"/>
-                                                <ComboBoxItem Content="11:00"/>
-                                                <ComboBoxItem Content="12:00"/>
-                                                <ComboBoxItem Content="13:00"/>
-                                                <ComboBoxItem Content="14:00"/>
-                                                <ComboBoxItem Content="15:00"/>
-                                                <ComboBoxItem Content="16:00"/>
-                                                <ComboBoxItem Content="17:00"/>
-                                                <ComboBoxItem Content="18:00"/>
-                                            </ComboBox>
-                                        </Border>
-                                    </StackPanel>
-                                </StackPanel>
-
-                                <!-- Thêm separator để tạo khoảng cách rõ ràng trước Payment Method -->
-                                <Separator Background="#E0E0E0" Margin="0,10,0,30"/>
-
-                                <!-- Payment Method Section - Thêm padding phía trên để tránh bị cắt -->
-                                <Grid Margin="0,20,0,0">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-
-                                    <StackPanel Grid.Column="0">
-                                        <TextBlock Text="Payment Method" FontSize="24" FontWeight="Bold"/>
-                                        <TextBlock Text="Please enter your payment method" Foreground="#90A3BF" Margin="0,5,0,20"/>
-                                    </StackPanel>
-
-                                    <TextBlock Grid.Column="1" Text="Step 3 of 4" Foreground="#90A3BF" VerticalAlignment="Top"/>
-                                </Grid>
-
-                                <!-- Credit Card Section -->
-                                <Border Background="#F6F7F9" CornerRadius="10" Margin="0,0,0,15" Padding="20">
-                                    <StackPanel>
-                                        <Grid>
-                                            <RadioButton x:Name="rbCreditCard" Content="Credit Card" IsChecked="True" 
+                            <!-- Credit Card Section -->
+                            <Border Background="#F6F7F9" CornerRadius="10" Margin="0,0,0,15" Padding="20">
+                                <StackPanel>
+                                    <Grid>
+                                        <RadioButton x:Name="rbCreditCard" Content="Credit Card" 
                                         FontSize="14" FontWeight="SemiBold"/>
-                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                                <!--Image Source="/Resources/visa_logo.png" Width="40" Height="25" Margin="0,0,10,0"/>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                            <!--Image Source="/Resources/visa_logo.png" Width="40" Height="25" Margin="0,0,10,0"/>
                                     <Image Source="/Resources/mastercard_logo.png" Width="40" Height="25"/-->
-                                            </StackPanel>
-                                        </Grid>
-
-                                        <!-- Card Number and Expiration Date -->
-                                        <Grid Margin="0,15,0,10">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="*"/>
-                                            </Grid.ColumnDefinitions>
-
-                                            <StackPanel Grid.Column="0" Margin="0,0,10,0">
-                                                <TextBlock Text="Card Number" Margin="0,0,0,8"/>
-                                                <Border Background="White" CornerRadius="10">
-                                                    <TextBox x:Name="txtCardNumber" Text="" BorderThickness="0" Background="Transparent"
-                                             Height="45" Padding="15,0" VerticalContentAlignment="Center"
-                                             FontSize="14" Foreground="#596780" Margin="2"
-                                             GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"
-                                             Tag="Card number"/>
-                                                </Border>
-                                            </StackPanel>
-
-                                            <StackPanel Grid.Column="1" Margin="10,0,0,0">
-                                                <TextBlock Text="Expiration Date" Margin="0,0,0,8"/>
-                                                <Border Background="White" CornerRadius="10">
-                                                    <TextBox x:Name="txtExpirationDate" Text="" BorderThickness="0" Background="Transparent"
-                                             Height="45" Padding="15,0" VerticalContentAlignment="Center"
-                                             FontSize="14" Foreground="#596780" Margin="2"
-                                             GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"
-                                             Tag="DD/MM/YY"/>
-                                                </Border>
-                                            </StackPanel>
-                                        </Grid>
-
-                                        <!-- Card Holder and CVC -->
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="*"/>
-                                            </Grid.ColumnDefinitions>
-
-                                            <StackPanel Grid.Column="0" Margin="0,0,10,0">
-                                                <TextBlock Text="Card Holder" Margin="0,0,0,8"/>
-                                                <Border Background="White" CornerRadius="10">
-                                                    <TextBox x:Name="txtCardHolder" Text="" BorderThickness="0" Background="Transparent"
-                                             Height="45" Padding="15,0" VerticalContentAlignment="Center"
-                                             FontSize="14" Foreground="#596780" Margin="2"
-                                             GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"
-                                             Tag="Card holder"/>
-                                                </Border>
-                                            </StackPanel>
-
-                                            <StackPanel Grid.Column="1" Margin="10,0,0,0">
-                                                <TextBlock Text="CVC" Margin="0,0,0,8"/>
-                                                <Border Background="White" CornerRadius="10">
-                                                    <PasswordBox x:Name="txtCVC" BorderThickness="0" Background="Transparent"
-                                                Height="45" Padding="15,0" VerticalContentAlignment="Center"
-                                                FontSize="14" Foreground="#596780" Margin="2"
-                                                MaxLength="3"/>
-                                                </Border>
-                                            </StackPanel>
-                                        </Grid>
-                                    </StackPanel>
-                                </Border>
-
-                                <!-- PayPal Section -->
-                                <Border Background="#F6F7F9" CornerRadius="10" Margin="0,0,0,15" Padding="20">
-                                    <Grid>
-                                        <RadioButton x:Name="rbPayPal" Content="PayPal" 
-                                    FontSize="14" FontWeight="SemiBold"/>
-                                        <!--Image Source="/Resources/paypal_logo.png" Width="80" Height="30" HorizontalAlignment="Right"/-->
+                                        </StackPanel>
                                     </Grid>
-                                </Border>
+                                </StackPanel>
+                            </Border>
 
-                                <!-- Bitcoin Section -->
-                                <Border Background="#F6F7F9" CornerRadius="10" Margin="0,0,0,30" Padding="20">
-                                    <Grid>
-                                        <RadioButton x:Name="rbBitcoin" Content="Bitcoin" 
+                            <!-- PayPal Section -->
+                            <Border Background="#F6F7F9" CornerRadius="10" Margin="0,0,0,15" Padding="20">
+                                <Grid>
+                                    <RadioButton x:Name="rbPayPal" Content="PayPal" 
                                     FontSize="14" FontWeight="SemiBold"/>
-                                        <!--Image Source="/Resources/bitcoin_logo.png" Width="80" Height="30" HorizontalAlignment="Right"/-->
-                                    </Grid>
-                                </Border>
-
-                                <!-- Thêm separator trước Confirmation -->
-                                <Separator Background="#E0E0E0" Margin="0,10,0,30"/>
-
-                                <!-- Confirmation Section - Thêm padding phía trên -->
-                                <Grid Margin="0,20,0,0">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-
-                                    <StackPanel Grid.Column="0">
-                                        <TextBlock Text="Confirmation" FontSize="24" FontWeight="Bold"/>
-                                        <TextBlock Text="We are getting to the end. Just few clicks and your rental is ready!" 
-                                  Foreground="#90A3BF" Margin="0,5,0,20" TextWrapping="Wrap"/>
-                                    </StackPanel>
-
-                                    <TextBlock Grid.Column="1" Text="Step 4 of 4" Foreground="#90A3BF" VerticalAlignment="Top"/>
+                                    <!--Image Source="/Resources/paypal_logo.png" Width="80" Height="30" HorizontalAlignment="Right"/-->
                                 </Grid>
+                            </Border>
 
-                                <!-- Agreement Checkboxes -->
-                                <StackPanel Margin="0,0,0,20">
-                                    <CheckBox x:Name="chkMarketing" Content="I agree with sending an Marketing and newsletter emails. No spam, promissed!" 
-                             Margin="0,0,0,10" FontSize="14"/>
-                                    <CheckBox x:Name="chkTerms" Content="I agree with our terms and conditions and privacy policy." 
-                             FontSize="14"/>
+                            <!-- Bitcoin Section -->
+                            <Border Background="#F6F7F9" CornerRadius="10" Margin="0,0,0,30" Padding="20">
+                                <Grid>
+                                    <RadioButton x:Name="rbBitcoin" Content="Bitcoin" 
+                                    FontSize="14" FontWeight="SemiBold"/>
+                                    <!--Image Source="/Resources/bitcoin_logo.png" Width="80" Height="30" HorizontalAlignment="Right"/-->
+                                </Grid>
+                            </Border>
+
+                            <!-- Thêm separator trước Confirmation -->
+                            <Separator Background="#E0E0E0" Margin="0,10,0,30"/>
+
+                            <!-- Confirmation Section - Thêm padding phía trên -->
+                            <Grid Margin="0,20,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Column="0">
+                                    <TextBlock Text="Confirmation" FontSize="24" FontWeight="Bold"/>
+                                    <TextBlock Text="We are getting to the end. Just few clicks and your rental is ready!" 
+                                  Foreground="#90A3BF" Margin="0,5,0,20" TextWrapping="Wrap"/>
                                 </StackPanel>
 
-                                <!-- Rent Now Button -->
-                                <Border Background="#3563E9" CornerRadius="10" Margin="0,0,0,20">
-                                    <Button x:Name="btnRentNow" Content="Rent Now" Height="50" 
+                                <TextBlock Grid.Column="1" Text="Step 4 of 4" Foreground="#90A3BF" VerticalAlignment="Top"/>
+                            </Grid>
+
+                            <!-- Agreement Checkboxes -->
+                            <StackPanel Margin="0,0,0,20">
+                                <CheckBox x:Name="chkMarketing" Content="I agree with sending an Marketing and newsletter emails. No spam, promissed!" 
+                             Margin="0,0,0,10" FontSize="14"/>
+                                <CheckBox x:Name="chkTerms" Content="I agree with our terms and conditions and privacy policy." 
+                             FontSize="14"/>
+                            </StackPanel>
+
+                            <!-- Rent Now Button -->
+                            <Border Background="#3563E9" CornerRadius="10" Margin="0,0,0,20">
+                                <Button x:Name="btnRentNow" Content="Rent Now" Height="50" 
                            Background="Transparent" Foreground="White" BorderThickness="0" 
                            FontWeight="SemiBold" Click="btnRentNow_Click"/>
-                                </Border>
+                            </Border>
 
-                                <!-- Data Security Message -->
-                                <StackPanel HorizontalAlignment="Center">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                        <Border Width="24" Height="24" Background="#F6F7F9" CornerRadius="12" Margin="0,0,10,0">
-                                            <TextBlock Text="🔒" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                        </Border>
-                                        <TextBlock Text="All your data are safe" FontWeight="SemiBold" VerticalAlignment="Center"/>
-                                    </StackPanel>
-                                    <TextBlock Text="We are using the most advanced security to provide you the best experience ever." 
-                              Foreground="#90A3BF" HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                            <!-- Data Security Message -->
+                            <StackPanel HorizontalAlignment="Center">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Border Width="24" Height="24" Background="#F6F7F9" CornerRadius="12" Margin="0,0,10,0">
+                                        <TextBlock Text="🔒" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <TextBlock Text="All your data are safe" FontWeight="SemiBold" VerticalAlignment="Center"/>
                                 </StackPanel>
+                                <TextBlock Text="We are using the most advanced security to provide you the best experience ever." 
+                              Foreground="#90A3BF" HorizontalAlignment="Center" Margin="0,5,0,0"/>
                             </StackPanel>
-                        </Grid>
+                        </StackPanel>
+                    </Grid>
 
-                        <Grid Grid.Column="1" Margin="5 0 10 0">
-                        <rentalsum:RentalSummaryView x:Name="RentalSummaryView" />
+                    <Grid Grid.Column="1" Margin="5 0 10 0">
+                        <ContentControl x:Name="RentalSummaryPlaceholder"/>
                     </Grid>
-                    </Grid>
-                        <Border Margin="0 10 0 0">
-                            <DockPanel Height="Auto" VerticalAlignment="Bottom">
-                                <components:Footer/>
-                            </DockPanel>
-                        </Border>
+                </Grid>
+                <Border Margin="0 10 0 0">
+                    <DockPanel Height="Auto" VerticalAlignment="Bottom">
+                        <components:Footer/>
+                    </DockPanel>
+                </Border>
             </StackPanel>
         </ScrollViewer>
     </Grid>

@@ -40,6 +40,12 @@
     <Compile Update="Views\MainWindowView\ComponentMainWindowView\CarCard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\PaymentView\ComponentPaymentView\BillingInfoView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PaymentView\ComponentPaymentView\RentalInfoView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\PaymentView\ComponentPaymentView\RentalSummaryView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -94,6 +100,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\MainWindowView\MainWindowMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PaymentView\ComponentPaymentView\BillingInfoView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PaymentView\ComponentPaymentView\RentalInfoView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\PaymentView\ComponentPaymentView\RentalSummaryView.xaml">

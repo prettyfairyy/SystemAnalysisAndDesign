@@ -25,5 +25,10 @@ namespace SystemAnalysisAndDesign.Models.Entities
         public Customer Customer { get; set; }
         public Car Car { get; set; }
         public ICollection<Payment> Payments { get; set; }
+        public static string GenerateNextId(int lastNumber)
+        {
+            return $"RE{(lastNumber + 1).ToString("D3")}";
+        }
+
     }
 }

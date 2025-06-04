@@ -4,6 +4,8 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using SystemAnalysisAndDesign.Models;
+using SystemAnalysisAndDesign.ViewModels.Stores;
+using static SystemAnalysisAndDesign.Views.DetailCarRentView.ComponentDetailCarRentView.DetailCarView;
 
 namespace SystemAnalysisAndDesign.ViewModels.SignInandRegisterViewModel
 {
@@ -44,6 +46,7 @@ namespace SystemAnalysisAndDesign.ViewModels.SignInandRegisterViewModel
 
             if (customer != null)
             {
+                LoginStore.CurrentCustomer = customer;
                 OnLoginSuccess?.Invoke();
             }
             else

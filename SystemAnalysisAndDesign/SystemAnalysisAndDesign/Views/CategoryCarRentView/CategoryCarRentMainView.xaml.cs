@@ -28,8 +28,10 @@ namespace SystemAnalysisAndDesign.Views.CategoryCarRentView
             InitializeComponent();
 
             _context = new RentalDbContext();
-            this.DataContext = new FilterOptionViewModel(_context); 
+            var viewModel = new FilterOptionViewModel(_context);
+            this.DataContext = viewModel;
+            
+            viewModel.CloseAction = new Action(() => this.Close());
         }
-
     }
 }
