@@ -14,7 +14,7 @@
             <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
     </UserControl.Resources>
-    <Grid>
+    <Grid Background="{Binding Background, RelativeSource={RelativeSource AncestorType=UserControl}}">
         <DataGrid x:Name="CarRentDataGrid" AutoGenerateColumns="False"
           HeadersVisibility="Column" RowHeight="100"
           CanUserAddRows="False" CanUserDeleteRows="False"
