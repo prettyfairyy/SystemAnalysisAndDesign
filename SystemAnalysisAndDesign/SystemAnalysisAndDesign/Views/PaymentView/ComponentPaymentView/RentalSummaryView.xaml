@@ -24,7 +24,7 @@
                         <TextBlock Text="★★★★☆" Foreground="#FFC107" FontSize="12" Margin="0 0 5 0"/>
                         <TextBlock Text="440+ Reviewer" Foreground="#90A3BF" FontSize="12"/>
                     </StackPanel>
-                    <TextBlock Text="{Binding SelectedCar.PricePerDay, StringFormat={}{0:C}}" Grid.Column="1" FontSize="14" Margin="5 8"/>
+                    <TextBlock Text="{Binding SelectedCar.PricePerDay, StringFormat=${0:0.00}/day}" Grid.Column="1" FontSize="14" Margin="5 8"/>
                 </StackPanel>
             </StackPanel>
 
@@ -59,7 +59,7 @@
                     </Grid.ColumnDefinitions>
                     <TextBox Margin="10 0" BorderThickness="0" Background="Transparent" FontSize="12" VerticalAlignment="Center"
                              Foreground="#90A3BF" Text="Apply promo code"/>
-                    <Button Grid.Column="1" Content="Apply now" Background="#3A63F1" Foreground="White" BorderThickness="0"
+                    <Button Style="{StaticResource PrimaryButtonStyle}" Grid.Column="1" Content="Apply now" Background="#3A63F1" Foreground="White" BorderThickness="0"
                             Padding="10,5" Margin="10" FontSize="12"/>
                 </Grid>
             </Border>
