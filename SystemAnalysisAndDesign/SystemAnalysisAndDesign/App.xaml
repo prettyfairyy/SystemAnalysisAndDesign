@@ -46,16 +46,16 @@
                 <Setter Property="FontFamily" Value="Montserrat"/>
                 <Setter Property="FontSize" Value="16"/>
             </Style>
+            <!-- Trong file ResourceDictionary của UserControl -->
+            <Style TargetType="{x:Type component:AdminCarRentApprovalListView}">
+                <Setter Property="Background" Value="{x:Null}"/> <!-- Cho phép kế thừa -->
+            </Style>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
                 <!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />-->
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
                 <!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />-->
             </ResourceDictionary.MergedDictionaries>
-            <!-- Trong file ResourceDictionary của UserControl -->
-            <Style TargetType="{x:Type component:AdminCarRentApprovalListView}">
-                <Setter Property="Background" Value="{x:Null}"/> <!-- Cho phép kế thừa -->
-            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

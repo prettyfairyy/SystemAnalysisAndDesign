@@ -139,8 +139,11 @@
                                          ToolTip="Edit" VerticalAlignment="Center"/>
                                 <!-- MouseLeftButtonDown="OnEditClicked" -->
                                 <!-- Delete Icon -->
-                                <materialDesign:PackIcon Kind="Delete" Width="24" Height="24" Foreground="#D32F2F" Cursor="Hand"
-                                         ToolTip="Delete" VerticalAlignment="Center"/>
+                                <Button Command="{Binding DataContext.DeleteCarCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                        CommandParameter="{Binding}" BorderBrush="Transparent" BorderThickness="0" Background="Transparent">
+                                    <materialDesign:PackIcon Kind="Delete" Width="24" Height="24" Foreground="#D32F2F" Cursor="Hand"
+                                                                     ToolTip="Delete" VerticalAlignment="Center" />
+                                </Button>
                                 <!-- MouseLeftButtonDown="OnDeleteClicked" -->
                             </StackPanel>
                         </DataTemplate>
