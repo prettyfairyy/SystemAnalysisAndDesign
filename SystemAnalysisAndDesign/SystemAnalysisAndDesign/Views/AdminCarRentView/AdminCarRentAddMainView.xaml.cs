@@ -28,5 +28,12 @@ namespace SystemAnalysisAndDesign.Views.AdminCarRentView
         {
 
         }
+        private void btn_CarRent(object sender, RoutedEventArgs e)
+        {
+            AdminCarRentMainView adminCarRentMainView = new AdminCarRentMainView();
+            adminCarRentMainView.Show();
+            this.Close();
+        }
+        
     }
 }
