@@ -4,8 +4,8 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using SystemAnalysisAndDesign.Models;
+using SystemAnalysisAndDesign.Models.Entities;
 using SystemAnalysisAndDesign.ViewModels.Stores;
-using static SystemAnalysisAndDesign.Views.DetailCarRentView.ComponentDetailCarRentView.DetailCarView;
 
 namespace SystemAnalysisAndDesign.ViewModels.SignInandRegisterViewModel
 {
@@ -33,25 +33,48 @@ namespace SystemAnalysisAndDesign.ViewModels.SignInandRegisterViewModel
                 return;
             }
 
-            // Kiểm tra nếu là admin
-            if (Username == "admin" && Password == "123456")
+            using var context = new RentalDbContext();
+
+            var account = context.UserAccount.FirstOrDefault(u =>
+                u.Username == Username && u.PasswordHash == Password && u.IsActive);
+
+            if (account == null)
             {
-                OnAdminLoginSuccess?.Invoke();
+                MessageBox.Show("Invalid username or password.");
                 return;
             }
 
-            using var context = new RentalDbContext();
-            var customer = context.Customers.FirstOrDefault(
-                c => c.Username == Username && c.PasswordHash == Password);
+            switch (account.Role?.ToLower())
+            {
+                case "customer":
+                    var customer = context.Customers.FirstOrDefault(c => c.Username == Username);
+                    if (customer != null)
+                    {
+                        LoginStore.CurrentCustomer = customer;
+                        OnLoginSuccess?.Invoke();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Customer record not found.");
+                    }
+                    break;
 
-            if (customer != null)
-            {
-                LoginStore.CurrentCustomer = customer;
-                OnLoginSuccess?.Invoke();
-            }
-            else
-            {
-                MessageBox.Show("Invalid username or password.");
+                case "employee":
+                    var employee = context.Employee.FirstOrDefault(e => e.Username == Username);
+                    if (employee != null)
+                    {
+                        LoginStore.CurrentEmployee = employee;
+                        OnAdminLoginSuccess?.Invoke();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Admin employee record not found.");
+                    }
+                    break;
+
+                default:
+                    MessageBox.Show("Unsupported user role.");
+                    break;
             }
         }
 

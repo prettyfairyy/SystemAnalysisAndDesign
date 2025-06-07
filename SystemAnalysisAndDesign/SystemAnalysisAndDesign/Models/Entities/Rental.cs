@@ -1,34 +1,58 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using SystemAnalysisAndDesign.Models.Entities;
 
-namespace SystemAnalysisAndDesign.Models.Entities
+public class Rental : INotifyPropertyChanged
 {
-    public class Rental
+    private string _rentalStatus;
+    private string _processedBy;
+    public string RentalId { get; set; }
+
+    public string CustomerId { get; set; }
+    public string CarId { get; set; }
+    public string RentalStatus
     {
-        public string RentalId { get; set; }
-        public string CustomerId { get; set; }
-        public string CarId { get; set; }
-
-        public string? PickUpLocation { get; set; }
-        public DateTime? PickUpDate { get; set; }
-        public TimeSpan? PickUpTime { get; set; }
-        public string? DropOffLocation { get; set; }
-        public DateTime? DropOffDate { get; set; }
-        public TimeSpan? DropOffTime { get; set; }
-        public string? RentalStatus { get; set; } // ongoing, completed, cancelled
-        public decimal? TotalAmount { get; set; }
-
-        // Navigation properties
-        public Customer Customer { get; set; }
-        public Car Car { get; set; }
-        public ICollection<Payment> Payments { get; set; }
-        public static string GenerateNextId(int lastNumber)
+        get => _rentalStatus;
+        set
         {
-            return $"RE{(lastNumber + 1).ToString("D3")}";
+            _rentalStatus = value;
+            OnPropertyChanged();
         }
+    }
 
+    public string? ProcessedBy
+    {
+        get => _processedBy;
+        set
+        {
+            _processedBy = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public string? PickUpLocation { get; set; }
+    public DateTime? PickUpDate { get; set; }
+    public TimeSpan? PickUpTime { get; set; }
+    public string? DropOffLocation { get; set; }
+    public DateTime? DropOffDate { get; set; }
+    public TimeSpan? DropOffTime { get; set; }
+    public DateTime IssuedDate { get; set; } = DateTime.Now; // auto set lúc tạo
+
+    public decimal? TotalAmount { get; set; }
+
+    // Navigation properties
+    public Customer Customer { get; set; }
+    public Car Car { get; set; }
+    public Employee? Employee { get; set; }  // For ProcessedBy
+    public ICollection<Payment> Payments { get; set; }
+
+    public static string GenerateNextId(int lastNumber)
+    {
+        return $"RE{(lastNumber + 1):D3}";
+    }
+    public event PropertyChangedEventHandler PropertyChanged;
+    protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }

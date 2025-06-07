@@ -2,9 +2,14 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:SystemAnalysisAndDesign"
+             xmlns:component="clr-namespace:SystemAnalysisAndDesign.Views.AdminCarRentApprovalView.ComponentAdminCarRentApprovalView"
              StartupUri="Views/MainWindowView/MainWindowMainView.xaml">
     <Application.Resources>
         <ResourceDictionary>
+            <Style TargetType="{x:Type component:AdminCarRentApprovalListView}">
+                <Setter Property="Background" Value="{x:Null}"/>
+                <!-- Cho phép kế thừa -->
+            </Style>
             <Style x:Key="PrimaryButtonStyle" TargetType="Button">
                 <Setter Property="Background" Value="#3A63F1"/>
                 <Setter Property="Foreground" Value="White"/>
@@ -51,6 +56,7 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
                 <!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />-->
             </ResourceDictionary.MergedDictionaries>
+            <!-- Trong file ResourceDictionary của UserControl -->            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

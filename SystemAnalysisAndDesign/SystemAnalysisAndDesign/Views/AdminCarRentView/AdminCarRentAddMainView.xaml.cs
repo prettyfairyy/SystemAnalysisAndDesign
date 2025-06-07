@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using SystemAnalysisAndDesign.Views.AdminCarRentApprovalView;
 
 namespace SystemAnalysisAndDesign.Views.AdminCarRentView
 {
@@ -27,6 +28,18 @@ namespace SystemAnalysisAndDesign.Views.AdminCarRentView
         private void AdminAddCarView_Loaded(object sender, RoutedEventArgs e)
         {
 
+        }
+        private void btn_CarRent(object sender, RoutedEventArgs e)
+        {
+            AdminCarRentMainView adminCarRentMainView = new AdminCarRentMainView();
+            adminCarRentMainView.Show();
+            this.Close();
+        }
+        private void btn_CarRental(object sender, RoutedEventArgs e)
+        {
+            AdminCarRentApprovalMainView adminCarRentApprovalMainView = new AdminCarRentApprovalMainView();
+            adminCarRentApprovalMainView.Show();
+            this.Close();
         }
     }
 }

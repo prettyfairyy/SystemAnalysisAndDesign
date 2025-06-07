@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using SystemAnalysisAndDesign.Models;
 using SystemAnalysisAndDesign.ViewModels.AdminCarRentViewModel;
 using SystemAnalysisAndDesign.ViewModels.SignInandRegisterViewModel;
+using SystemAnalysisAndDesign.Views.AdminCarRentApprovalView;
 using SystemAnalysisAndDesign.Views.PaymentView;
 
 namespace SystemAnalysisAndDesign.Views.AdminCarRentView
@@ -36,6 +37,18 @@ namespace SystemAnalysisAndDesign.Views.AdminCarRentView
         {
             AdminCarRentAddMainView adminCarRentAddMainView = new AdminCarRentAddMainView();
             adminCarRentAddMainView.Show();
+            this.Close();
+        }
+        private void btn_CarRentList(object sender, RoutedEventArgs e)
+        {
+            AdminCarRentMainView adminCarRentMainView = new AdminCarRentMainView();
+            adminCarRentMainView.Show();
+            this.Close();
+        }
+        private void btn_CarRental(object sender, RoutedEventArgs e)
+        {
+            AdminCarRentApprovalMainView adminCarRentApprovalMainView = new AdminCarRentApprovalMainView();
+            adminCarRentApprovalMainView.Show();
             this.Close();
         }
     }

@@ -10,7 +10,7 @@ namespace SystemAnalysisAndDesign.Models.Entities
     {
         public string CustomerId { get; set; }
         public string Username { get; set; }
-        public string PasswordHash { get; set; }
+
         public string FullName { get; set; }
         public string? Email { get; set; }
         public string? Phone { get; set; }
@@ -18,6 +18,7 @@ namespace SystemAnalysisAndDesign.Models.Entities
         public string? DriverLicense { get; set; }
         public DateTime? DateOfBirth { get; set; }
 
+        public UserAccount Account { get; set; }
         public ICollection<Rental> Rentals { get; set; }
 
         public string Town

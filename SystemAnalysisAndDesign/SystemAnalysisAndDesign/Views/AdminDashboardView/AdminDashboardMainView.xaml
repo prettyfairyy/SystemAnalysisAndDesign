@@ -41,12 +41,22 @@
                         </Button>
                     </Border>
 
+                    <!-- Rental -->
+                    <Border Background="White" CornerRadius="7" Margin="0 5" Height="40">
+                        <Button Background="Transparent" BorderThickness="0" Click="btn_CarRental">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Approve" Width="20" Height="20" Margin="5" VerticalAlignment="Center" Foreground="#3A63F1"/>
+                                <TextBlock Text="Rental Request" Foreground="#3A63F1" FontWeight="Bold" Margin="0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </Border>
+
                     <!-- Car Rent -->
                     <Border Background="White" CornerRadius="7" Margin="0 5" Height="40">
                         <Button Background="Transparent" BorderThickness="0" Click="btn_CarRentList">
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="Car" Width="20" Height="20" Margin="5" VerticalAlignment="Center" Foreground="#3A63F1"/>
-                                <TextBlock Text="Car Rent" Foreground="#3A63F1" FontWeight="Bold" Margin="0" VerticalAlignment="Center"/>
+                                <TextBlock Text="Car" Foreground="#3A63F1" FontWeight="Bold" Margin="0" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
                     </Border>

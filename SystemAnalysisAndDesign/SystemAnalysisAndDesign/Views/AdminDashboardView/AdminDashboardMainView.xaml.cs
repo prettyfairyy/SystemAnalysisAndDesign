@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using SystemAnalysisAndDesign.ViewModels.SignInandRegisterViewModel;
 using SystemAnalysisAndDesign.Views.AdminCarRentView;
+using SystemAnalysisAndDesign.Views.AdminCarRentApprovalView;
 using SystemAnalysisAndDesign.Views.PaymentView;
 using LiveCharts;
 using LiveCharts.Wpf;
@@ -37,6 +38,12 @@ namespace SystemAnalysisAndDesign.Views.AdminDashboardView
         {
             AdminCarRentMainView adminCarRentMainView = new AdminCarRentMainView();
             adminCarRentMainView.Show();
+            this.Close();
+        }
+        private void btn_CarRental(object sender, RoutedEventArgs e)
+        {
+            AdminCarRentApprovalMainView adminCarRentApprovalMainView = new AdminCarRentApprovalMainView();
+            adminCarRentApprovalMainView.Show();
             this.Close();
         }
         public Func<ChartPoint, string> PointLabel { get; set; }
