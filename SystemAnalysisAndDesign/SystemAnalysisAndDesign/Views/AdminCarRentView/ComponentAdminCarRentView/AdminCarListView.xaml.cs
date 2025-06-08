@@ -31,7 +31,7 @@ namespace SystemAnalysisAndDesign.Views.AdminCarRentView.ComponentAdminCarRentVi
             var viewModel = new AdminCarListViewModel(context);
             this.DataContext = viewModel;
         }
-        /* private void OnEditClicked(object sender, MouseButtonEventArgs e)
+        /*private void OnEditClicked(object sender, MouseButtonEventArgs e)
         {
             var selectedItem = CarRentDataGrid.SelectedItem as CarModel; // Thay CarModel bằng model của bạn
             if (selectedItem != null)

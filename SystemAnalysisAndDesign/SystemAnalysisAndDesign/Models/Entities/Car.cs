@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
+using System.IO;
 
 namespace SystemAnalysisAndDesign.Models.Entities
 {
@@ -43,6 +44,44 @@ namespace SystemAnalysisAndDesign.Models.Entities
                 };
             }
         }
-        
+
+        [NotMapped]
+        public string ImageAbsolutePath
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(ImagePath)) return null;
+
+                string basePath = AppDomain.CurrentDomain.BaseDirectory;
+                string relativePath = ImagePath.TrimStart('/').Replace("/", "\\");
+                string fullPath = System.IO.Path.Combine(basePath, relativePath);
+
+                // 👇 Nếu ảnh chưa có trong bin, tự động copy từ thư mục source (project)
+                if (!File.Exists(fullPath))
+                {
+                    try
+                    {
+                        // Đường dẫn ảnh gốc trong thư mục project (source)
+                        string projectRoot = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
+                        string projectImagePath = Path.Combine(projectRoot, relativePath);
+
+                        if (File.Exists(projectImagePath))
+                        {
+                            Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
+                            File.Copy(projectImagePath, fullPath, true);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Logging nếu cần
+                        Console.WriteLine("Image copy failed: " + ex.Message);
+                    }
+                }
+
+                return fullPath;
+            }
+        }
+
+
     }
 }

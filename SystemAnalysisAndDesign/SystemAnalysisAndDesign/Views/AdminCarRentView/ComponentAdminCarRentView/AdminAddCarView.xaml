@@ -93,7 +93,9 @@
                                 BorderThickness="1"
                                 CornerRadius="15"
                                 Background="#EFF3FD">
-                            <Image Source="{Binding ImagePath}" Stretch="Uniform"/>
+                            <Image Source="{Binding ImageFullPath}" Stretch="UniformToFill" />
+
+
                         </Border>
                     </StackPanel>
                     <StackPanel Margin="10,5">
