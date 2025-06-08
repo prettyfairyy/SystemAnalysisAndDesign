@@ -14,7 +14,7 @@ using SystemAnalysisAndDesign.Models.Entities;
 
 namespace SystemAnalysisAndDesign.ViewModels.AdminCarRentViewModel
 {
-    internal class AdminCarListViewModel
+    public class AdminCarListViewModel
     {
         private readonly RentalDbContext _context;
         public ObservableCollection<Car> AllCars { get; set; }
@@ -27,14 +27,14 @@ namespace SystemAnalysisAndDesign.ViewModels.AdminCarRentViewModel
             LoadDataFromDatabase();
             DeleteCarCommand = new RelayCommand<Car>(DeleteCar);
         }
-        private void LoadDataFromDatabase()
+        public void LoadDataFromDatabase()
         {
             AllCars = new ObservableCollection<Car>(_context.Cars.ToList());
             OnPropertyChanged(nameof(AllCars));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged(string propertyName)
+        public void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

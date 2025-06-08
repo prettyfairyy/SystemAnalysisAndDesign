@@ -36,7 +36,7 @@
                 <DataGridTemplateColumn Header="Car" HeaderStyle="{StaticResource CenteredHeader}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Image Source="{Binding ImagePath}" Stretch="UniformToFill" Margin="5" Width="180"/>
+                            <Image Source="{Binding ImageAbsolutePath}" Stretch="UniformToFill" Margin="5" Width="180"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

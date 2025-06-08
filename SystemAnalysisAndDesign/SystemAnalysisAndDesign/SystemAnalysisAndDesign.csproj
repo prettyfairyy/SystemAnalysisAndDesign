@@ -128,7 +128,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Image\CarImage\Porsche-Taycan.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Image\CarImage\RangeRover-Evoque.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
