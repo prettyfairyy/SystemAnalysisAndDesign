@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="SystemAnalysisAndDesign.Views.PaymentView.ComponentPaymentView.BillingInfoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="782">
+    <StackPanel>
+        <!-- Billing Info Section -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="Billing Info" FontSize="24" FontWeight="Bold"/>
+                <TextBlock Text="Please enter your billing info" Foreground="#90A3BF" Margin="0,5,0,20"/>
+            </StackPanel>
+
+            <TextBlock Grid.Column="1" Text="Step 1 of 4" Foreground="#90A3BF" VerticalAlignment="Top"/>
+        </Grid>
+
+        <!-- Name and Phone Number -->
+        <Grid Margin="0,0,0,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                <TextBlock Text="Name" Margin="0,0,0,8"/>
+                <Border Background="#F6F7F9" CornerRadius="10">
+                    <TextBox Text="{Binding FullName}" BorderThickness="0" Background="Transparent"
+                             Height="45" Padding="15,0" VerticalContentAlignment="Center"
+                             FontSize="14" Foreground="#596780" Margin="2"/>
+                </Border>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                <TextBlock Text="Phone Number" Margin="0,0,0,8"/>
+                <Border Background="#F6F7F9" CornerRadius="10">
+                    <TextBox Text="{Binding Phone}" BorderThickness="0" Background="Transparent"
+                             Height="45" Padding="15,0" VerticalContentAlignment="Center"
+                             FontSize="14" Foreground="#596780" Margin="2"/>
+                </Border>
+            </StackPanel>
+        </Grid>
+
+        <!-- Address and Town/City -->
+        <Grid Margin="0,0,0,30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                <TextBlock Text="Address" Margin="0,0,0,8"/>
+                <Border Background="#F6F7F9" CornerRadius="10">
+                    <TextBox Text="{Binding FullAddress}" BorderThickness="0" Background="Transparent"
+                             Height="45" Padding="15,0" VerticalContentAlignment="Center"
+                             FontSize="14" Foreground="#596780" Margin="2"/>
+                </Border>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                <TextBlock Text="Town / City" Margin="0,0,0,8"/>
+                <Border Background="#F6F7F9" CornerRadius="10">
+                    <TextBox Text="{Binding Town}" BorderThickness="0" Background="Transparent"
+                             Height="45" Padding="15,0" VerticalContentAlignment="Center"
+                             FontSize="14" Foreground="#596780" Margin="2"/>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+</UserControl>

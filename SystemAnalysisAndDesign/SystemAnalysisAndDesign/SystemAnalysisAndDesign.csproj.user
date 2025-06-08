@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\AdminCarRentView\AdminCarRentAddMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AdminCarRentView\AdminCarRentMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AdminCarRentView\ComponentAdminCarRentView\AdminAddCarView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AdminCarRentView\ComponentAdminCarRentView\AdminCarListView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AdminDashboardView\AdminDashboardMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\CategoryCarRentView\CategoryCarRentMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\CategoryCarRentView\ComponentCategoryCarRentView\FilterCarView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\CategoryCarRentView\ComponentCategoryCarRentView\FilterOptionView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DetailCarRentView\ComponentDetailCarRentView\DetailCarView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DetailCarRentView\DetailCarRentMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\MainWindowView\ComponentMainWindowView\CarCard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PaymentView\ComponentPaymentView\BillingInfoView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PaymentView\ComponentPaymentView\RentalInfoView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PaymentView\ComponentPaymentView\RentalSummaryView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PaymentView\PaymentMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Share\Footer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Share\Header.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Share\UserControl1.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SignInandRegisterView\SignInMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\AdminCarRentView\AdminCarRentAddMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AdminCarRentView\AdminCarRentMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AdminCarRentView\ComponentAdminCarRentView\AdminAddCarView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AdminCarRentView\ComponentAdminCarRentView\AdminCarListView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AdminDashboardView\AdminDashboardMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CategoryCarRentView\CategoryCarRentMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CategoryCarRentView\ComponentCategoryCarRentView\FilterCarView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CategoryCarRentView\ComponentCategoryCarRentView\FilterOptionView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DetailCarRentView\ComponentDetailCarRentView\DetailCarView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DetailCarRentView\DetailCarRentMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MainWindowView\ComponentMainWindowView\CarCard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MainWindowView\MainWindowMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PaymentView\ComponentPaymentView\BillingInfoView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PaymentView\ComponentPaymentView\RentalInfoView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PaymentView\ComponentPaymentView\RentalSummaryView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PaymentView\PaymentMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Share\Footer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Share\Header.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Share\UserControl1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SignInandRegisterView\SignInMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,149 @@
+﻿<UserControl x:Class="SystemAnalysisAndDesign.Views.AdminCarRentView.ComponentAdminCarRentView.AdminAddCarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+             xmlns:local="clr-namespace:SystemAnalysisAndDesign.Views.AdminCarRentView.ComponentAdminCarRentView"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="984" Background="white">
+    <Grid>
+        <Grid Margin="20,0,20,20" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Form -->
+            <Grid Grid.Row="0" HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Car Brand & Model -->
+                <StackPanel Grid.Row="0" Orientation="Horizontal">
+                    <StackPanel Margin="10,5">
+                        <TextBlock Text="Brand" Margin="15,0"/>
+                        <Border CornerRadius="15" BorderBrush="#E0E0E0" BorderThickness="1" Height="35" Margin="0,5" Padding="10" Width="400">
+                            <TextBox Text="{Binding Brand, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" BorderThickness="0" VerticalAlignment="Center"/>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Margin="10,5">
+                        <TextBlock Text="Model" Margin="15,0"/>
+                        <Border CornerRadius="15" BorderBrush="#E0E0E0" BorderThickness="1" Height="35" Margin="0,5" Padding="10" Width="400">
+                            <TextBox Text="{Binding Model, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" BorderThickness="0" VerticalAlignment="Center"/>
+                        </Border>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- CarType + LicensePlate -->
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <StackPanel Margin="10,5">
+                        <TextBlock Text="Car type" Margin="15,0"/>
+                        <Border CornerRadius="15" BorderBrush="#E0E0E0" BorderThickness="1" Height="35" Margin="0,5" Padding="10" Width="400">
+                            <TextBox Text="{Binding CarType, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" BorderThickness="0" VerticalAlignment="Center"/>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Margin="10,5">
+                        <TextBlock Text="License plate" Margin="15,0"/>
+                        <Border CornerRadius="15" BorderBrush="#E0E0E0" BorderThickness="1" Height="35" Margin="0,5" Padding="10" Width="400">
+                            <TextBox Text="{Binding LicensePlate, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" BorderThickness="0" VerticalAlignment="Center"/>
+                        </Border>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Color + Price -->
+                <StackPanel Grid.Row="2" Orientation="Horizontal">
+                    <StackPanel Margin="10,5">
+                        <TextBlock Text="Color" Margin="15,0"/>
+                        <Border CornerRadius="15" BorderBrush="#E0E0E0" BorderThickness="1" Height="35" Margin="0,5" Padding="10" Width="400">
+                            <TextBox Text="{Binding Color, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" BorderThickness="0" VerticalAlignment="Center"/>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Margin="10,5">
+                        <TextBlock Text="Price per day" Margin="15,0"/>
+                        <Border CornerRadius="15" BorderBrush="#E0E0E0" BorderThickness="1" Height="35" Margin="0,5" Padding="10" Width="400">
+                            <TextBox Text="{Binding PricePerDay, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" BorderThickness="0" VerticalAlignment="Center"/>
+                        </Border>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Car Image Upload -->
+                <StackPanel Grid.Row="3" Orientation="Horizontal">
+                    <StackPanel Margin="10,5">
+                        <TextBlock Text="Car Image" Margin="15,0"/>
+                        <Button Content="Upload Image" Foreground="Black" Height="35" Width="200"
+                                Background="#EFF3FD" Margin="0,5" Command="{Binding UploadImageCommand}" >
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="#E0E0E0" BorderThickness="1" CornerRadius="15">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Border Width="400"
+                                Height="250"
+                                Margin="10,10,10,10"
+                                BorderBrush="#E0E0E0"
+                                BorderThickness="1"
+                                CornerRadius="15"
+                                Background="#EFF3FD">
+                            <Image Source="{Binding ImagePath}" Stretch="Uniform"/>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Margin="10,5">
+                        <TextBlock Text="Description" Margin="15,0"/>
+                        <Border CornerRadius="15" BorderBrush="#E0E0E0" BorderThickness="1" Height="70" Margin="0,5" Padding="10" Width="400">
+                            <TextBox Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" BorderThickness="0"/>
+                        </Border>
+                        <TextBlock Text="Manufacture Year" Margin="15,10,0,0"/>
+                        <Border CornerRadius="15" BorderBrush="#E0E0E0" BorderThickness="1" Height="35" Margin="0,5" Padding="10" Width="400">
+                            <TextBox Text="{Binding ManufactureYear, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" BorderThickness="0" VerticalAlignment="Center"/>
+                        </Border>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10" >
+                            <StackPanel Margin="0,0,10,0">
+                                <TextBlock Text="Mileage" Margin="15,0"/>
+                                <Border CornerRadius="15" BorderBrush="#E0E0E0" BorderThickness="1" Height="35" Margin="0,5" Padding="10" Width="190">
+                                    <TextBox Text="{Binding Mileage, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" BorderThickness="0" VerticalAlignment="Center"/>
+                                </Border>
+                            </StackPanel>
+                            <StackPanel Margin="10,0,0,0">
+                                <TextBlock Text="Capacity" Margin="15,0"/>
+                                <Border CornerRadius="15" BorderBrush="#E0E0E0" BorderThickness="1" Height="35" Margin="0,5" Padding="10" Width="190">
+                                    <TextBox Text="{Binding Capacity, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" BorderThickness="0" VerticalAlignment="Center"/>
+                                </Border>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Action Buttons -->
+                <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20 0 0">
+                    <Button Content="Delete" Height="35" Width="100" Padding="10" Background="Transparent" Margin="10,0">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="15" BorderBrush="#E0E0E0" BorderThickness="1" >
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Content="Save" Command="{Binding SaveCommand}" Height="35" Width="100" Padding="10" Background="#2C63F1" Foreground="White" Margin="10,0,0,0">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="15">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

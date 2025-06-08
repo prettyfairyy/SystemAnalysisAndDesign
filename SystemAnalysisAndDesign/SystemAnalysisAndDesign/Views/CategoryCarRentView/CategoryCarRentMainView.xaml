@@ -1,0 +1,181 @@
+﻿<Window x:Class="SystemAnalysisAndDesign.Views.CategoryCarRentView.CategoryCarRentMainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        
+        xmlns:local="clr-namespace:SystemAnalysisAndDesign.Views.CategoryCarRentView"
+        xmlns:shared="clr-namespace:SystemAnalysisAndDesign.Views.Share"
+        xmlns:filteroption="clr-namespace:SystemAnalysisAndDesign.Views.CategoryCarRentView.ComponentCategoryCarRentView"
+        mc:Ignorable="d"
+        Title="CategoryCarRentMainView" Height="auto" Width="1280" Background="#EFF3FD">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.12*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Header-->
+        <Grid Grid.Row="0">
+            <shared:Header/>
+        </Grid>
+
+        <!--Main-->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden" >
+            <StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.2*"/>
+                        <ColumnDefinition Width="0.8*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Sidebar Filters -->
+                    <filteroption:FilterOptionView Grid.Column="0"/>
+
+                    <!-- Main Content -->
+                    <StackPanel Grid.Column="1" Margin="0 10 20 10">
+                        <Border Background="White" CornerRadius="10" Padding="10">
+                            <StackPanel Background="White" Margin="0 0 0 0">
+                                <!-- Pick-Up & Drop-Off Section -->
+                                <Grid HorizontalAlignment="Center" Margin="0 0" Width="980">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Pick-Up Card -->
+                                    <Border Grid.Column="0" CornerRadius="15" Background="White" Padding="15" Margin="0 0 20 0">
+                                        <StackPanel>
+                                            <!-- Header -->
+                                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0 0 0 10">
+                                                <Ellipse Width="10" Height="10" Fill="#3A63F1" VerticalAlignment="Center"/>
+                                                <TextBlock Text="Pick - Up" FontWeight="Bold" FontSize="14" Margin="8 0"/>
+                                            </StackPanel>
+
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <!-- Branch -->
+                                                <StackPanel Grid.Column="0" Margin="5">
+                                                    <TextBlock Text="Branch" FontWeight="Bold" FontSize="13" Margin="0 0 5 5"/>
+                                                    <ComboBox Background="#F4F4F4" Padding="8,4" BorderThickness="0"
+                              FontSize="12" Foreground="Gray">
+                                                        <ComboBoxItem Content="Select branch" IsSelected="True" IsEnabled="False"/>
+                                                        <ComboBoxItem Content="Tan Son Nhat Airport"/>
+                                                        <ComboBoxItem Content="City Center"/>
+                                                        <ComboBoxItem Content="Branch District 1"/>
+                                                        <ComboBoxItem Content="Branch District 2"/>
+                                                        <ComboBoxItem Content="Branch District 3"/>
+                                                        <ComboBoxItem Content="Branch District 5"/>
+                                                        <ComboBoxItem Content="Branch District 7"/>
+                                                    </ComboBox>
+                                                </StackPanel>
+
+                                                <!-- Date -->
+                                                <StackPanel Grid.Column="1" Margin="5">
+                                                    <TextBlock Text="Date" FontWeight="Bold" FontSize="13" Margin="0 0 5 5"/>
+                                                    <DatePicker Background="#F4F4F4" Padding="8,2" BorderThickness="0"
+                                FontSize="12" Foreground="Gray"/>
+                                                </StackPanel>
+
+                                                <!-- Time -->
+                                                <StackPanel Grid.Column="2" Margin="5">
+                                                    <TextBlock Text="Time" FontWeight="Bold" FontSize="13" Margin="0 0 5 5"/>
+                                                    <TextBox Background="#F4F4F4" BorderThickness="0" FontSize="13"
+                             Padding="8,4" Foreground="Gray" Text="08:00"
+                             Name="PickUpTimeTextBox"
+                             ToolTip="Enter time (hh:mm)"/>
+                                                </StackPanel>
+                                            </Grid>
+                                        </StackPanel>
+                                    </Border>
+
+                                    <!-- Switch Button -->
+                                    <Button Grid.Column="1" Content="⇅" Width="40" Height="40" FontSize="16"
+                                                            Background="#3A63F1" Foreground="White" Margin="0"
+                                                            BorderThickness="0" Cursor="Hand" HorizontalAlignment="Center"
+                                                            VerticalAlignment="Center" Padding="0">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="{TemplateBinding Background}"
+                                                        CornerRadius="12">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+
+                                    <!-- Drop-Off Card -->
+                                    <Border Grid.Column="2" CornerRadius="15" Background="White" Padding="15" Margin="20 0 0 0">
+                                        <StackPanel>
+                                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0 0 0 10">
+                                                <Ellipse Width="10" Height="10" Fill="#3A63F1" VerticalAlignment="Center"/>
+                                                <TextBlock Text="Drop - Off" FontWeight="Bold" FontSize="14" Margin="8 0"/>
+                                            </StackPanel>
+
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <!-- Branch -->
+                                                <StackPanel Grid.Column="0" Margin="5">
+                                                    <TextBlock Text="Branch" FontWeight="Bold" FontSize="13" Margin="0 0 5 5"/>
+                                                    <ComboBox Background="#F4F4F4" Padding="8,4" BorderThickness="0"
+                              FontSize="12" Foreground="Gray">
+                                                        <ComboBoxItem Content="Select branch" IsSelected="True" IsEnabled="False"/>
+                                                        <ComboBoxItem Content="Tan Son Nhat Airport"/>
+                                                        <ComboBoxItem Content="City Center"/>
+                                                        <ComboBoxItem Content="Branch District 1"/>
+                                                        <ComboBoxItem Content="Branch District 2"/>
+                                                        <ComboBoxItem Content="Branch District 3"/>
+                                                        <ComboBoxItem Content="Branch District 5"/>
+                                                        <ComboBoxItem Content="Branch District 7"/>
+                                                    </ComboBox>
+                                                </StackPanel>
+
+                                                <!-- Date -->
+                                                <StackPanel Grid.Column="1" Margin="5">
+                                                    <TextBlock Text="Date" FontWeight="Bold" FontSize="13" Margin="0 0 5 5"/>
+                                                    <DatePicker Background="#F4F4F4" Padding="8,2" BorderThickness="0"
+                                FontSize="12" Foreground="Gray"/>
+                                                </StackPanel>
+
+                                                <!-- Time -->
+                                                <StackPanel Grid.Column="2" Margin="5">
+                                                    <TextBlock Text="Time" FontWeight="Bold" FontSize="13" Margin="0 0 5 5"/>
+                                                    <TextBox Background="#F4F4F4" BorderThickness="0" FontSize="13"
+                             Padding="8,4" Foreground="Gray" Text="12:00"
+                             Name="DropOffTimeTextBox"
+                             ToolTip="Enter time (hh:mm)"/>
+                                                </StackPanel>
+                                            </Grid>
+                                        </StackPanel>
+                                    </Border>
+                                </Grid>
+
+
+                                <!-- Car Card List -->
+                                <WrapPanel Margin="0" ItemHeight="Auto" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                                        <filteroption:FilterCarView Grid.Column="1" Margin="0 10 0 10"/>
+                                    </ScrollViewer>
+                                </WrapPanel>
+
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+                <!--Footer-->
+                <shared:Footer/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
